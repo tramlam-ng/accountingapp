@@ -1,4 +1,4 @@
-AllRevenues As screen:
+AllExpenses As screen:
     Fill: =RGBA(241, 241, 241, 1)
     OnVisible: |-
         =/*resets calendar view and date selection to today*/
@@ -8,7 +8,7 @@ AllRevenues As screen:
         Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, Months), -1, Days));
         Set(varSelectedUser,Office365Users.SearchUser({searchTerm:User().Email}))
 
-    Icon6 As icon.Edit:
+    Icon6_1 As icon.Edit:
         Color: =RGBA(116, 39, 116, 1)
         Height: =28
         Icon: =Icon.Edit
@@ -18,7 +18,7 @@ AllRevenues As screen:
         Y: =81
         ZIndex: =1
 
-    btnLoadData_1 As button:
+    btnLoadData_2 As button:
         OnSelect: =ClearCollect(colGridData,Projects)
         Text: ="Button"
         Visible: =false
@@ -26,14 +26,14 @@ AllRevenues As screen:
         Y: =63
         ZIndex: =9
 
-    grpNewRevenue As group:
+    grpNewExpense As group:
         Height: =5
         Width: =5
         X: =26
         Y: =-10
         ZIndex: =9
 
-        lblNewProject_1 As button:
+        lblNewProject_6 As button:
             Align: =Align.Left
             BorderColor: |
                 =
@@ -49,7 +49,7 @@ AllRevenues As screen:
                 RGBA(166, 166, 166, 1)
             OnSelect: |-
                 =//NewForm(formNewProject);Clear(colAttachsGallery);Set(varPopUp,true);Reset(attachment)
-                Set(varPopUpNewRev,true);ResetForm(formNewRevenue);NewForm(formNewRevenue);
+                Set(varPopUpNewRev,true);ResetForm(formNewRevenue_4);NewForm(formNewRevenue_4);
             PaddingRight: =5.27
             PaddingTop: =5.27
             RadiusBottomLeft: =5
@@ -63,14 +63,14 @@ AllRevenues As screen:
             Y: =81
             ZIndex: =11
 
-        Icon3_1 As icon.Add:
+        Icon3_7 As icon.Add:
             Color: =RGBA(116, 39, 116, 1)
             Height: =28
             HoverFill: =RGBA(47,43,41,0.2)
             Icon: =Icon.Add
             OnSelect: |-
                 =//NewForm(formNewProject);Clear(colAttachsGallery);Set(varPopUp,true);Reset(attachment)
-                Set(varPopUpNewRev,true);ResetForm(formNewRevenue);NewForm(formNewRevenue);
+                Set(varPopUpNewRev,true);ResetForm(formNewRevenue_4);NewForm(formNewRevenue_4);
             PaddingRight: =0.00
             PaddingTop: =0.00
             Width: =28
@@ -78,7 +78,7 @@ AllRevenues As screen:
             Y: =81
             ZIndex: =15
 
-    ComboBox1_5 As combobox:
+    ComboBox1_6 As combobox:
         BorderColor: =RGBA(166, 166, 166, 1)
         BorderThickness: =1
         ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -99,7 +99,7 @@ AllRevenues As screen:
         PressedBorderColor: =RGBA(171, 171, 171, 1)
         PressedColor: =RGBA(51, 51, 51, 1)
         PressedFill: =RGBA(0, 0, 0, 0)
-        SearchItems: =Search(ComboBoxSample,ComboBox1_5.SearchText,"Value1")
+        SearchItems: =Search(ComboBoxSample,ComboBox1_6.SearchText,"Value1")
         SelectionColor: =RGBA(51, 51, 51, 1)
         SelectionFill: =RGBA(244, 244, 244, 1)
         Size: =11.60
@@ -108,14 +108,14 @@ AllRevenues As screen:
         Y: =81
         ZIndex: =10
 
-    grpSearchProject_1 As group:
+    grpSearchProject_2 As group:
         Height: =5
         Width: =5
         X: =26
         Y: =-10
         ZIndex: =10
 
-        txtSearchProject_1 As text:
+        txtSearchProject_2 As text:
             BorderColor: =RGBA(101, 128, 187, 1)
             BorderStyle: =BorderStyle.None
             BorderThickness: =0
@@ -136,7 +136,7 @@ AllRevenues As screen:
             Y: =81
             ZIndex: =12
 
-        Icon4_1 As icon.Search:
+        Icon4_2 As icon.Search:
             Color: =RGBA(116, 39, 116, 1)
             Height: =22
             Icon: =Icon.Search
@@ -147,7 +147,7 @@ AllRevenues As screen:
             Y: =85
             ZIndex: =16
 
-    ComboBox1_1 As combobox:
+    ComboBox1_2 As combobox:
         BorderColor: =RGBA(166, 166, 166, 1)
         BorderThickness: =1
         ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -168,7 +168,7 @@ AllRevenues As screen:
         PressedBorderColor: =RGBA(171, 171, 171, 1)
         PressedColor: =RGBA(51, 51, 51, 1)
         PressedFill: =RGBA(0, 0, 0, 0)
-        SearchItems: =Search(ComboBoxSample,ComboBox1_1.SearchText,"Value1")
+        SearchItems: =Search(ComboBoxSample,ComboBox1_2.SearchText,"Value1")
         SelectionColor: =RGBA(51, 51, 51, 1)
         SelectionFill: =RGBA(244, 244, 244, 1)
         Size: =11.60
@@ -177,12 +177,12 @@ AllRevenues As screen:
         Y: =81
         ZIndex: =13
 
-    galRevStatusBar As gallery.galleryHorizontal:
+    galExpenseStatusBar As gallery.galleryHorizontal:
         Height: =71
         Items: |-
             =//Table({Tab:"ALL"},{Tab:"PLAN"},{Tab:"APPROVED"},{Tab:"ACTUAL"})
             //Choices(Revenues.'Revenue Status')
-            colRevStatus
+            colExpenseStatus
         OnSelect: =
         TemplateFill: =//If(ThisItem.IsSelected,RGBA(255,255,255,1),RGBA(245,245,245,1))
         TemplatePadding: =5.27
@@ -192,7 +192,7 @@ AllRevenues As screen:
         Y: =50
         ZIndex: =14
 
-        Button4_1 As button:
+        Button4_2 As button:
             Align: =Align.Left
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderThickness: =1
@@ -224,14 +224,14 @@ AllRevenues As screen:
             Y: =5
             ZIndex: =1
 
-    galRev As gallery.galleryVertical:
+    galExpense As gallery.galleryVertical:
         BorderColor: =RGBA(0, 0, 0, 0)
         Fill: =RGBA(255, 255, 255, 1)
         Height: =615
         Items: |-
             =//Filter(Revenues, txtSearchProject_1.Text in Project)
             //colGridData
-            Sort(Filter(Revenues, IsBlank(galRevStatusBar.Selected.Value) || 'Revenue Status' = galRevStatusBar.Selected.Value),'Created On',Ascending)
+            Sort(Filter(Expenses, IsBlank(galExpenseStatusBar.Selected.Value) || 'Expense Status' = galExpenseStatusBar.Selected.Value),'Created On',Ascending)
         Layout: =Layout.Vertical
         OnSelect: =If(varname = ThisItem
         ShowNavigation: =true
@@ -244,9 +244,9 @@ AllRevenues As screen:
         Y: =152
         ZIndex: =17
 
-        TextInput2_5 As text:
+        TextInput2_24 As text:
             BorderThickness: =0
-            Default: =ThisItem.'Revenue Name'
+            Default: =ThisItem.'Expense Name'
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0)
             OnSelect: |-
@@ -258,9 +258,9 @@ AllRevenues As screen:
             Width: =224
             ZIndex: =1
 
-        TextInput2_6 As text:
+        TextInput2_25 As text:
             BorderThickness: =0
-            Default: =ThisItem.ProjectName.Project
+            Default: =ThisItem.'Project Name'.Project
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0)
             Height: =35
@@ -268,14 +268,14 @@ AllRevenues As screen:
             PaddingRight: =5.27
             PaddingTop: =5.27
             Size: =11
-            Visible: =If(varNameRev = ThisItem.'Revenue Name',true,false) 
+            Visible: =//If(varNameRev = ThisItem.'Revenue Name',true,false) 
             Width: =170
             X: =256
             ZIndex: =2
 
-        TextInput2_7 As text:
+        TextInput2_26 As text:
             BorderThickness: =0
-            Default: =ThisItem.Installments
+            Default: =ThisItem.'Expense Type'
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0)
             Height: =35
@@ -287,7 +287,7 @@ AllRevenues As screen:
             X: =409
             ZIndex: =3
 
-        TextInput2_8 As text:
+        TextInput2_27 As text:
             BorderThickness: =0
             Default: =ThisItem.Planner.'Display Name'
             DisplayMode: =DisplayMode.View
@@ -301,9 +301,9 @@ AllRevenues As screen:
             X: =529
             ZIndex: =4
 
-        TextInput2_9 As text:
+        TextInput2_28 As text:
             BorderThickness: =0
-            Default: =ThisItem.'Revenue Status'
+            Default: =ThisItem.'Expense Status'
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0)
             Height: =35
@@ -315,9 +315,9 @@ AllRevenues As screen:
             X: =679
             ZIndex: =5
 
-        TextInput2_11 As text:
+        TextInput2_29 As text:
             BorderThickness: =0
-            Default: =Text(ThisItem.'Expected Date',"dd/mm/yyyy")
+            Default: =Text(ThisItem.'Expected Payment Date',"dd/mm/yyyy")
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0)
             Height: =35
@@ -329,7 +329,7 @@ AllRevenues As screen:
             X: =799
             ZIndex: =6
 
-        Rectangle1_3 As rectangle:
+        Rectangle1_6 As rectangle:
             Fill: =RGBA(237, 237, 237, 1)
             Height: =1
             OnSelect: =Select(Parent)
@@ -338,24 +338,24 @@ AllRevenues As screen:
             Y: =39
             ZIndex: =7
 
-        Container1_1 As groupContainer.manualLayoutContainer:
+        Container1_2 As groupContainer.manualLayoutContainer:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =35
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Visible: =If(varNameRev && ThisItem.IsSelected,true,false)
+            Visible: =If(varNameExp && ThisItem.IsSelected,true,false)
             Width: =373
             X: =256
             ZIndex: =10
 
-            Group1_3 As group:
+            Group1_5 As group:
                 Height: =5
                 Width: =5
                 X: =36
                 Y: =35
                 ZIndex: =5
 
-                Icon7_4 As icon.Cancel:
+                Icon7_8 As icon.Cancel:
                     Height: =14
                     Icon: =Icon.DetailList
                     OnSelect: =Navigate(Projectdetails,ScreenTransition.Cover)
@@ -366,7 +366,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =3
 
-                TextInput6_4 As text:
+                TextInput6_8 As text:
                     BorderThickness: =0
                     Default: ="Details"
                     Fill: =RGBA(0, 0, 0, 0)
@@ -380,7 +380,7 @@ AllRevenues As screen:
                     X: =37
                     ZIndex: =4
 
-            Icon7_6 As icon.Cancel:
+            Icon7_11 As icon.Cancel:
                 Height: =14
                 Icon: =Icon.Trash
                 PaddingRight: =0.00
@@ -390,14 +390,14 @@ AllRevenues As screen:
                 Y: =10
                 ZIndex: =7
 
-            Group1_4 As group:
+            Group1_6 As group:
                 Height: =5
                 Width: =5
                 X: =-50
                 Y: =35
                 ZIndex: =7
 
-                Icon7_5 As icon.Cancel:
+                Icon7_9 As icon.Cancel:
                     Height: =14
                     Icon: =Icon.History
                     PaddingRight: =0.00
@@ -407,7 +407,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =5
 
-                TextInput6_5 As text:
+                TextInput6_9 As text:
                     BorderThickness: =0
                     Default: ="Activity log"
                     Fill: =RGBA(0, 0, 0, 0)
@@ -420,7 +420,7 @@ AllRevenues As screen:
                     X: =113
                     ZIndex: =6
 
-            TextInput6_6 As text:
+            TextInput6_11 As text:
                 BorderThickness: =0
                 Default: ="Remove"
                 Fill: =RGBA(0, 0, 0, 0)
@@ -434,7 +434,7 @@ AllRevenues As screen:
                 X: =287
                 ZIndex: =8
 
-            Icon7_7 As icon.Cancel:
+            Icon7_10 As icon.Cancel:
                 Height: =14
                 Icon: =Icon.Edit
                 OnSelect: =Set(varPopUpEditRev,true)
@@ -445,7 +445,7 @@ AllRevenues As screen:
                 Y: =10
                 ZIndex: =9
 
-            TextInput6_7 As text:
+            TextInput6_10 As text:
                 BorderThickness: =0
                 Default: ="Edit"
                 Fill: =RGBA(0, 0, 0, 0)
@@ -459,7 +459,7 @@ AllRevenues As screen:
                 X: =225
                 ZIndex: =10
 
-        icnLink_2 As icon.Crop:
+        icnLink_3 As icon.Crop:
             Height: =20
             Icon: =Icon.Link
             OnSelect: =Launch(LookUp(Documents,Name = ThisItem.Project,'Link to item'))
@@ -469,7 +469,7 @@ AllRevenues As screen:
             Y: =12
             ZIndex: =14
 
-        TextInput2_12 As text:
+        TextInput2_30 As text:
             BorderThickness: =0
             Default: =ThisItem.'Expected Payment Value'
             DisplayMode: =DisplayMode.View
@@ -483,7 +483,7 @@ AllRevenues As screen:
             X: =949
             ZIndex: =15
 
-        TextInput2_13 As text:
+        TextInput2_31 As text:
             BorderThickness: =0
             Default: =Text(ThisItem.'Actual Payment Date',"dd/mm/yyyy")
             DisplayMode: =DisplayMode.View
@@ -497,7 +497,7 @@ AllRevenues As screen:
             X: =1099
             ZIndex: =16
 
-        TextInput2_14 As text:
+        TextInput2_32 As text:
             BorderThickness: =0
             Default: =ThisItem.'Actual Payment Value'
             DisplayMode: =DisplayMode.View
@@ -511,11 +511,11 @@ AllRevenues As screen:
             X: =1247
             ZIndex: =17
 
-        Icon5_2 As icon.More:
+        Icon5_6 As icon.More:
             FocusedBorderThickness: =0
             Height: =30
             Icon: =Icon.More
-            OnSelect: =Set(varNameRev,!varNameRev)
+            OnSelect: =Set(varNameExp,!varNameExp)
             PaddingRight: =0.00
             PaddingTop: =0.00
             Rotation: =90
@@ -524,7 +524,7 @@ AllRevenues As screen:
             Y: =2
             ZIndex: =18
 
-    "galAttach_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+    "galAttach_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         Fill: =RGBA(255, 255, 255, 1)
         Height: =293
         Items: =colAttachments
@@ -536,7 +536,7 @@ AllRevenues As screen:
         Y: =436
         ZIndex: =18
 
-        imgDataStream_1 As image:
+        imgDataStream_2 As image:
             Height: =128
             Image: =ThisItem.Value
             OnSelect: =Select(Parent)
@@ -545,7 +545,7 @@ AllRevenues As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =1
 
-        lblTitle_1 As label:
+        lblTitle_2 As label:
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -554,12 +554,12 @@ AllRevenues As screen:
             PaddingTop: =0
             Text: =ThisItem.Name
             VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - imgDataStream_1.Width - 104
-            X: =imgDataStream_1.X + imgDataStream_1.Width + 24
+            Width: =Parent.TemplateWidth - imgDataStream_2.Width - 104
+            X: =imgDataStream_2.X + imgDataStream_2.Width + 24
             Y: =44
             ZIndex: =2
 
-        Subtitle1_1 As label:
+        Subtitle1_2 As label:
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -568,12 +568,12 @@ AllRevenues As screen:
             PaddingTop: =0
             Text: =ThisItem.Value
             VerticalAlign: =VerticalAlign.Top
-            Width: =lblTitle_1.Width
-            X: =lblTitle_1.X
-            Y: =lblTitle_1.Y + lblTitle_1.Height + 4
+            Width: =lblTitle_2.Width
+            X: =lblTitle_2.X
+            Y: =lblTitle_2.Y + lblTitle_2.Height + 4
             ZIndex: =3
 
-        NextArrow1_1 As icon.ChevronRight:
+        NextArrow1_2 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =60
             Icon: =Icon.ChevronRight
@@ -589,14 +589,14 @@ AllRevenues As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =4
 
-        Separator1_1 As rectangle:
+        Separator1_2 As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
             ZIndex: =5
 
-    Button3_1 As button:
+    Button3_2 As button:
         OnSelect: =Set(varPopUp2,true)
         Text: ="Button"
         Visible: =varPopUp
@@ -604,7 +604,7 @@ AllRevenues As screen:
         Y: =60
         ZIndex: =19
 
-    Rectangle1_4 As rectangle:
+    Rectangle1_5 As rectangle:
         Fill: =RGBA(237, 237, 237, 1)
         Height: =1
         OnSelect: =
@@ -613,7 +613,7 @@ AllRevenues As screen:
         Y: =151
         ZIndex: =28
 
-    Icon5 As icon.OptionsList:
+    Icon5_4 As icon.OptionsList:
         Color: =RGBA(116, 39, 116, 1)
         Height: =28
         Icon: =Icon.OptionsList
@@ -623,7 +623,7 @@ AllRevenues As screen:
         Y: =82
         ZIndex: =30
 
-    Icon5_3 As icon.OptionsList:
+    Icon5_5 As icon.OptionsList:
         Color: =RGBA(116, 39, 116, 1)
         Height: =28
         Icon: =Icon.CalendarBlank
@@ -633,21 +633,21 @@ AllRevenues As screen:
         Y: =82
         ZIndex: =31
 
-    PopUp2_1 As group:
+    PopUp2_3 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =33
 
-        rtgPopUp2_3 As rectangle:
+        rtgPopUp2_10 As rectangle:
             Fill: =RGBA(240, 240, 240, 0.65)
             Height: =768
             Visible: =varPopUp2 
             Width: =1440
             ZIndex: =44
 
-        rtgPopUp1_3 As rectangle:
+        rtgPopUp1_12 As rectangle:
             BorderColor: =RGBA(109, 49, 162, 1)
             Fill: =White
             Height: =273
@@ -657,12 +657,12 @@ AllRevenues As screen:
             Y: =227
             ZIndex: =45
 
-        Button2_3 As button:
+        Button2_7 As button:
             BorderThickness: =1
             DisabledBorderColor: =RGBA(116, 39, 116, 1)
             Fill: =RGBA(116, 39, 116, 1)
             HoverFill: =ColorFade(RGBA(116, 39, 116, 1), -20%)
-            OnSelect: =Set(varPopUp2,false);ResetForm(formNewRevenue);NewForm(formNewRevenue)
+            OnSelect: =Set(varPopUp2,false);ResetForm(formNewRevenue_4);NewForm(formNewRevenue_4)
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -674,7 +674,7 @@ AllRevenues As screen:
             Y: =437
             ZIndex: =46
 
-        Button2_2 As button:
+        Button2_4 As button:
             Fill: =RGBA(149, 149, 149, 1)
             HoverFill: =ColorFade(RGBA(166, 166, 166, 100), -20%)
             OnSelect: =Set(varPopUp2,false);Set(varPopUp,false)
@@ -689,7 +689,7 @@ AllRevenues As screen:
             Y: =437
             ZIndex: =47
 
-        TextInput4_1 As text:
+        TextInput4_3 As text:
             BorderThickness: =0
             Default: ="New project has been successfully created." 
             FontWeight: =FontWeight.Bold
@@ -701,10 +701,10 @@ AllRevenues As screen:
             Y: =303
             ZIndex: =48
 
-    TextInput1_2 As text:
+    TextInput1_3 As text:
         BorderThickness: =0
         Color: =RGBA(0, 18, 107, 1)
-        Default: ="New Revenue"
+        Default: ="New Expense"
         DisplayMode: =DisplayMode.View
         FontWeight: =FontWeight.Bold
         Visible: =varPopUpNewRev
@@ -713,7 +713,7 @@ AllRevenues As screen:
         Y: =10
         ZIndex: =43
 
-    "Gallery1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+    "Gallery1_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
         Fill: =RGBA(168, 0, 0, 1)
         Height: =312
         Items: =Filter(Revenues,'Expected Date' = _dateSelected)
@@ -725,7 +725,7 @@ AllRevenues As screen:
         Y: =215
         ZIndex: =49
 
-        Title1 As label:
+        Title1_3 As label:
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -739,7 +739,7 @@ AllRevenues As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =1
 
-        NextArrow2 As icon.ChevronRight:
+        NextArrow2_1 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Height: =60
             Icon: =Icon.ChevronRight
@@ -755,14 +755,14 @@ AllRevenues As screen:
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =2
 
-        Separator2 As rectangle:
+        Separator2_1 As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
             ZIndex: =3
 
-    Icon7 As icon.CancelBadge:
+    Icon7_12 As icon.CancelBadge:
         Icon: =Icon.CancelBadge
         OnSelect: =Set(varCalDetails,false)
         Visible: =varCalDetails
@@ -770,14 +770,14 @@ AllRevenues As screen:
         Y: =287
         ZIndex: =50
 
-    Group1 As group:
+    Group1_7 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =51
 
-        Label1_17 As label:
+        Label1_31 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -790,7 +790,7 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =20
 
-        Label1_7 As label:
+        Label1_26 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -804,7 +804,7 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =21
 
-        Label1_8 As label:
+        Label1_27 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -818,7 +818,7 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =22
 
-        Label1_9 As label:
+        Label1_28 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -826,13 +826,13 @@ AllRevenues As screen:
             FontWeight: =FontWeight.Bold
             Height: =30
             Size: =12
-            Text: ="Installments"
+            Text: ="Type"
             Width: =120
             X: =427
             Y: =120
             ZIndex: =23
 
-        Label1_10 As label:
+        Label1_29 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -845,7 +845,7 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =24
 
-        Label1_11 As label:
+        Label1_30 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -859,7 +859,7 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =25
 
-        Label1_12 As label:
+        Label1_33 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -872,7 +872,7 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =26
 
-        Label1_13 As label:
+        Label1_34 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -886,7 +886,7 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =27
 
-        Label1_18 As label:
+        Label1_32 As label:
             Align: =Align.Center
             BorderColor: =RGBA(172, 62, 11, 1)
             Color: =RGBA(47, 41, 43, 1)
@@ -899,21 +899,21 @@ AllRevenues As screen:
             Y: =120
             ZIndex: =29
 
-    PopUpCalDetails As group:
+    PopUpCalDetails_1 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =55
 
-        rtgPopUp2_7 As rectangle:
+        rtgPopUp2_11 As rectangle:
             Fill: =RGBA(240, 240, 240, 0.7)
             Height: =768
             Visible: =varPopUpCalDetails
             Width: =1440
             ZIndex: =51
 
-        rtgPopUp1_7 As rectangle:
+        rtgPopUp1_10 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =768
             Visible: =varPopUpCalDetails
@@ -921,7 +921,7 @@ AllRevenues As screen:
             X: =878
             ZIndex: =52
 
-        formNewRevenue_1 As form:
+        formNewRevenue_5 As form:
             DataSource: =Revenues
             Height: =629
             Item: =varItemRev
@@ -932,7 +932,7 @@ AllRevenues As screen:
             Y: =32
             ZIndex: =53
 
-            "'Project Name_DataCard1_1' As typedDataCard.comboBoxEditCard":
+            "'Project Name_DataCard1_5' As typedDataCard.comboBoxEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_ProjectName"
                 Default: =ThisItem.ProjectName
@@ -941,13 +941,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue17_1.Selected
+                Update: =DataCardValue17_5.Selected
                 Width: =516
                 X: =1
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey18_1 As label:
+                DataCardKey18_5 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -959,7 +959,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue17_1 As combobox:
+                DataCardValue17_5 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -970,15 +970,15 @@ AllRevenues As screen:
                     Items: =Choices([@Revenues].ProjectName)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["tl_project"]
-                    SearchItems: =Search(Choices([@Revenues].ProjectName),DataCardValue17_1.SearchText,"tl_project")
+                    SearchItems: =Search(Choices([@Revenues].ProjectName),DataCardValue17_5.SearchText,"tl_project")
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey18_1.Y + DataCardKey18_1.Height + 5
+                    Y: =DataCardKey18_5.Y + DataCardKey18_5.Height + 5
                     ZIndex: =2
 
-                ErrorMessage16_1 As label:
+                ErrorMessage16_5 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -990,20 +990,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue17_1.Y + DataCardValue17_1.Height
+                    Y: =DataCardValue17_5.Y + DataCardValue17_5.Height
                     ZIndex: =3
 
-                StarVisible16_1 As label:
+                StarVisible16_5 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey18_1.Height
+                    Height: =DataCardKey18_5.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey18_1.Y
+                    Y: =DataCardKey18_5.Y
                     ZIndex: =4
 
-            Installments_DataCard1_1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+            Installments_DataCard1_5 As typedDataCard.comboBoxOptionSetSingleEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_installments"
                 Default: =ThisItem.Installments
@@ -1012,13 +1012,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue15_1.Selected.Value
+                Update: =DataCardValue15_5.Selected.Value
                 Width: =516
                 X: =3
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey16_1 As label:
+                DataCardKey16_5 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -1030,7 +1030,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue15_1 As combobox:
+                DataCardValue15_5 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     ChevronBackground: =White
@@ -1047,10 +1047,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey16_1.Y + DataCardKey16_1.Height + 5
+                    Y: =DataCardKey16_5.Y + DataCardKey16_5.Height + 5
                     ZIndex: =2
 
-                ErrorMessage14_1 As label:
+                ErrorMessage14_5 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1062,20 +1062,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue15_1.Y + DataCardValue15_1.Height
+                    Y: =DataCardValue15_5.Y + DataCardValue15_5.Height
                     ZIndex: =3
 
-                StarVisible14_1 As label:
+                StarVisible14_5 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey16_1.Height
+                    Height: =DataCardKey16_5.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey16_1.Y
+                    Y: =DataCardKey16_5.Y
                     ZIndex: =4
 
-            "'Expected Date_DataCard1_1' As typedDataCard.dateEditCard":
+            "'Expected Date_DataCard1_5' As typedDataCard.dateEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_expecteddate"
                 Default: =ThisItem.'Expected Date'
@@ -1084,13 +1084,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =99
                 Required: =false
-                Update: =DataCardValue19_1.SelectedDate
+                Update: =DataCardValue19_5.SelectedDate
                 Width: =516
                 X: =4
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey23_1 As label:
+                DataCardKey23_5 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -1102,7 +1102,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue19_1 As datepicker:
+                DataCardValue19_5 As datepicker:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     DefaultDate: =Parent.Default
@@ -1118,10 +1118,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey23_1.Y + DataCardKey23_1.Height + 5
+                    Y: =DataCardKey23_5.Y + DataCardKey23_5.Height + 5
                     ZIndex: =2
 
-                ErrorMessage21_1 As label:
+                ErrorMessage21_5 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1133,20 +1133,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue19_1.Y + DataCardValue19_1.Height
+                    Y: =DataCardValue19_5.Y + DataCardValue19_5.Height
                     ZIndex: =3
 
-                StarVisible21_1 As label:
+                StarVisible21_5 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey23_1.Height
+                    Height: =DataCardKey23_5.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey23_1.Y
+                    Y: =DataCardKey23_5.Y
                     ZIndex: =4
 
-            "'Expected Payment Value_DataCard1_1' As typedDataCard.numberEditCard":
+            "'Expected Payment Value_DataCard1_5' As typedDataCard.numberEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_expectedpaymentvalue"
                 Default: =ThisItem.'Expected Payment Value'
@@ -1155,13 +1155,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =Value(DataCardValue8_1.Text)
+                Update: =Value(DataCardValue8_5.Text)
                 Width: =516
                 X: =5
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey15_1 As label:
+                DataCardKey15_5 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -1171,7 +1171,7 @@ AllRevenues As screen:
                     X: =17
                     ZIndex: =1
 
-                DataCardValue8_1 As text:
+                DataCardValue8_5 As text:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     Default: =Parent.Default
@@ -1192,7 +1192,7 @@ AllRevenues As screen:
                     Y: =49
                     ZIndex: =2
 
-                ErrorMessage13_1 As label:
+                ErrorMessage13_5 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1204,20 +1204,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue8_1.Y + DataCardValue8_1.Height
+                    Y: =DataCardValue8_5.Y + DataCardValue8_5.Height
                     ZIndex: =3
 
-                StarVisible13_1 As label:
+                StarVisible13_5 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey15_1.Height
+                    Height: =DataCardKey15_5.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey15_1.Y
+                    Y: =DataCardKey15_5.Y
                     ZIndex: =4
 
-            "'Revenue Status_DataCard1_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            "'Revenue Status_DataCard1_5' As typedDataCard.comboBoxOptionSetSingleEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_status"
                 Default: =ThisItem.'Revenue Status'
@@ -1226,13 +1226,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue18_1.Selected.Value
+                Update: =DataCardValue18_5.Selected.Value
                 Width: =258
                 X: =0
                 Y: =2
                 ZIndex: =1
 
-                DataCardKey19_1 As label:
+                DataCardKey19_5 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -1244,7 +1244,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue18_1 As combobox:
+                DataCardValue18_5 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -1261,10 +1261,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey19_1.Y + DataCardKey19_1.Height + 5
+                    Y: =DataCardKey19_5.Y + DataCardKey19_5.Height + 5
                     ZIndex: =2
 
-                ErrorMessage17_1 As label:
+                ErrorMessage17_5 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1276,20 +1276,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue18_1.Y + DataCardValue18_1.Height
+                    Y: =DataCardValue18_5.Y + DataCardValue18_5.Height
                     ZIndex: =3
 
-                StarVisible17_1 As label:
+                StarVisible17_5 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey19_1.Height
+                    Height: =DataCardKey19_5.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey19_1.Y
+                    Y: =DataCardKey19_5.Y
                     ZIndex: =4
 
-            Planner_DataCard2_1 As typedDataCard.comboBoxEditCard:
+            Planner_DataCard2_5 As typedDataCard.comboBoxEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_Planner"
                 Default: =ThisItem.Planner
@@ -1298,13 +1298,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue16_1.Selected
+                Update: =DataCardValue16_5.Selected
                 Width: =258
                 X: =1
                 Y: =2
                 ZIndex: =1
 
-                DataCardKey8_1 As label:
+                DataCardKey8_5 As label:
                     AutoHeight: =true
                     Height: =34
                     Text: =Parent.DisplayName
@@ -1314,7 +1314,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue16_1 As combobox:
+                DataCardValue16_5 As combobox:
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     DefaultSelectedItems: |-
                         =//If(formNewRevenue.Mode = FormMode.New,{Value:UserName},Parent.Default)
@@ -1324,15 +1324,15 @@ AllRevenues As screen:
                     Items: =Choices([@Revenues].tl_Planner)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["displayname"]
-                    SearchItems: =Search(Choices([@Revenues].tl_Planner),DataCardValue16_1.SearchText,"displayname")
+                    SearchItems: =Search(Choices([@Revenues].tl_Planner),DataCardValue16_5.SearchText,"displayname")
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey8_1.Y + DataCardKey8_1.Height + 5
+                    Y: =DataCardKey8_5.Y + DataCardKey8_5.Height + 5
                     ZIndex: =2
 
-                ErrorMessage15_1 As label:
+                ErrorMessage15_5 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1344,20 +1344,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue16_1.Y + DataCardValue16_1.Height
+                    Y: =DataCardValue16_5.Y + DataCardValue16_5.Height
                     ZIndex: =3
 
-                StarVisible15_1 As label:
+                StarVisible15_5 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey8_1.Height
+                    Height: =DataCardKey8_5.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey8_1.Y
+                    Y: =DataCardKey8_5.Y
                     ZIndex: =4
 
-            "'Revenue Name_DataCard1_1' As typedDataCard.textualEditCard":
+            "'Revenue Name_DataCard1_5' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_revenuename"
                 Default: =ThisItem.'Revenue Name'
@@ -1367,13 +1367,13 @@ AllRevenues As screen:
                 Height: =50
                 MaxLength: =DataSourceInfo([@Revenues], DataSourceInfo.MaxLength, "tl_revenuename")
                 Required: =true
-                Update: =DataCardValue6_1.Text
+                Update: =DataCardValue6_5.Text
                 Width: =516
                 X: =0
                 Y: =0
                 ZIndex: =61
 
-                DataCardKey6_1 As label:
+                DataCardKey6_5 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -1385,7 +1385,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue6_1 As text:
+                DataCardValue6_5 As text:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     Default: =Parent.Default
@@ -1403,10 +1403,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey6_1.Y + DataCardKey6_1.Height + 5
+                    Y: =DataCardKey6_5.Y + DataCardKey6_5.Height + 5
                     ZIndex: =2
 
-                ErrorMessage6_1 As label:
+                ErrorMessage6_5 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1418,20 +1418,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue6_1.Y + DataCardValue6_1.Height
+                    Y: =DataCardValue6_5.Y + DataCardValue6_5.Height
                     ZIndex: =3
 
-                StarVisible6_1 As label:
+                StarVisible6_5 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey6_1.Height
+                    Height: =DataCardKey6_5.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey6_1.Y
+                    Y: =DataCardKey6_5.Y
                     ZIndex: =4
 
-        btnSaveViewDetail_4 As button:
+        btnSaveViewDetail_6 As button:
             BorderThickness: =1
             DisplayMode: |-
                 =//If(!IsBlankOrError(DataCardValue6_1) && !IsBlankOrError(DataCardValue15_1) && !IsBlankOrError(DataCardValue17_1) && !IsBlankOrError(DataCardValue8_1) && !IsBlankOrError(DataCardValue18_1) && !IsBlankOrError(DataCardValue19_1) && !IsBlankOrError(DataCardValue16_1),DisplayMode.Edit,DisplayMode.Disabled)
@@ -1443,7 +1443,7 @@ AllRevenues As screen:
                 =//Clear(colAttachsGallery); ForAll(galAttach.AllItems,Collect(colAttachsGallery,{Title:lblTitle.Text,DataStream:imgDataStream.Image}));ProjectsManagementFlow.Run(JSON(colAttachsGallery,JSONFormat.IncludeBinaryData),txtProjectName.Text);
                 //SubmitForm(formNewRevenue);NewForm(formNewRevenue);
                 //EditForm(formNewRevenue_1)
-                If(mytext = "Edit",UpdateContext({mytext:"Save"}) & EditForm(formNewRevenue_1), UpdateContext({mytext:"Edit"}) & SubmitForm(formNewRevenue_1) & ViewForm(formNewRevenue_1))
+                If(mytext = "Edit",UpdateContext({mytext:"Save"}) & EditForm(formNewRevenue_5), UpdateContext({mytext:"Edit"}) & SubmitForm(formNewRevenue_5) & ViewForm(formNewRevenue_5))
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -1456,7 +1456,7 @@ AllRevenues As screen:
             Y: =689
             ZIndex: =54
 
-        Icon2_4 As icon.CancelBadge:
+        Icon2_7 As icon.CancelBadge:
             Color: =RGBA(0, 13, 75, 1)
             Height: =26
             Icon: =Icon.CancelBadge
@@ -1467,20 +1467,20 @@ AllRevenues As screen:
             Y: =10
             ZIndex: =55
 
-    Group4_2 As group:
+    Group4_3 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =20
         ZIndex: =57
 
-        Rectangle6_2 As rectangle:
+        Rectangle6_3 As rectangle:
             Fill: =RGBA(116, 39, 116, 1)
             Height: =50
             Width: =1440
             ZIndex: =2
 
-        Gallery2_2 As gallery.galleryHorizontal:
+        Gallery2_3 As gallery.galleryHorizontal:
             BorderStyle: =BorderStyle.None
             Height: =50
             Items: |
@@ -1491,7 +1491,7 @@ AllRevenues As screen:
             X: =400.59
             ZIndex: =3
 
-            Button1_2 As button:
+            Button1_3 As button:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =0
                 Fill: =RGBA(0, 0, 0, 0)
@@ -1499,7 +1499,7 @@ AllRevenues As screen:
                 FontWeight: =FontWeight.Normal
                 Height: =50
                 HoverFill: =ColorFade(RGBA(116, 39, 116, 1),-20%)
-                OnSelect: =Switch(ThisItem.Tab,"ALL PROJECTS",Navigate(AllProjects),"ALL REVENUES",Navigate(AllRevenues),"ALL COSTS",Navigate(AllRevenues)) 
+                OnSelect: =Switch(ThisItem.Tab,"ALL PROJECTS",Navigate(AllProjects),"ALL REVENUES",Navigate(AllExpenses),"ALL COSTS",Navigate(AllExpenses)) 
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0.00
@@ -1514,7 +1514,7 @@ AllRevenues As screen:
                 X: =6.33
                 ZIndex: =1
 
-        Rectangle2_14 As rectangle:
+        Rectangle2_16 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =45
             Width: =2.11
@@ -1522,7 +1522,7 @@ AllRevenues As screen:
             Y: =2
             ZIndex: =4
 
-        Rectangle2_13 As rectangle:
+        Rectangle2_17 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =45
             Width: =2.11
@@ -1530,7 +1530,7 @@ AllRevenues As screen:
             Y: =2
             ZIndex: =5
 
-        Rectangle2_12 As rectangle:
+        Rectangle2_18 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =45
             Width: =2.11
@@ -1538,7 +1538,7 @@ AllRevenues As screen:
             Y: =2
             ZIndex: =6
 
-        Rectangle2_11 As rectangle:
+        Rectangle2_19 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =45
             Width: =2.11
@@ -1546,21 +1546,21 @@ AllRevenues As screen:
             Y: =2
             ZIndex: =7
 
-        Rectangle2_10 As rectangle:
+        Rectangle2_15 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =45
             Width: =2.11
             X: =1176.46
             ZIndex: =8
 
-    popupCalendar As group:
+    popupCalendar_1 As group:
         Height: =5
         Width: =5
         X: =60
         Y: =60
         ZIndex: =58
 
-        Rectangle3 As rectangle:
+        Rectangle3_1 As rectangle:
             Fill: =RGBA(240, 240, 240, 1)
             Height: =647
             Visible: =_calendarVisible
@@ -1568,7 +1568,7 @@ AllRevenues As screen:
             Y: =121
             ZIndex: =32
 
-        LblMonthSelected1_1 As label:
+        LblMonthSelected1_2 As label:
             FontWeight: =FontWeight.Bold
             Height: =34
             Size: =18
@@ -1580,7 +1580,7 @@ AllRevenues As screen:
             Y: =139
             ZIndex: =33
 
-        WeekdayGallery1_1 As gallery.WeekdayGallery:
+        WeekdayGallery1_2 As gallery.WeekdayGallery:
             AccessibleLabel: ="Days of the week"
             Fill: =RGBA(116, 39, 116, 1)
             Height: =46
@@ -1594,7 +1594,7 @@ AllRevenues As screen:
             Y: =175
             ZIndex: =34
 
-            Title1_1 As label:
+            Title1_2 As label:
                 Align: =Align.Center
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =FontWeight.Semibold
@@ -1605,11 +1605,11 @@ AllRevenues As screen:
                 VerticalAlign: =Middle
                 Width: =191
                 Wrap: =false
-                X: =WeekdayGallery1_1.TemplateWidth / 2 - Self.Width / 2
-                Y: =WeekdayGallery1_1.TemplateHeight / 2 - Self.Height / 2
+                X: =WeekdayGallery1_2.TemplateWidth / 2 - Self.Width / 2
+                Y: =WeekdayGallery1_2.TemplateHeight / 2 - Self.Height / 2
                 ZIndex: =1
 
-        MonthDayGallery1_1 As gallery.MonthDayGallery:
+        MonthDayGallery1_2 As gallery.MonthDayGallery:
             AccessibleLabel: ="Days of selected month"
             BorderColor: =RGBA(116, 39, 116, 1)
             BorderThickness: =1
@@ -1627,7 +1627,7 @@ AllRevenues As screen:
             Y: =221
             ZIndex: =35
 
-            Circle1_1 As circle:
+            Circle1_2 As circle:
                 Height: =Self.Width
                 OnSelect: =Select(Parent)
                 Visible: |
@@ -1636,30 +1636,30 @@ AllRevenues As screen:
                     //!IsBlank(LookUp(Revenues,'Expected Date'= DateAdd(_firstDayInView,ThisItem.Value,Days)).'Revenue Name') || !IsBlank(LookUp(Revenues,'Actual Payment Date'= DateAdd(_firstDayInView,ThisItem.Value,Days)).'Revenue Name') 
                     false
                 Width: =6.5
-                X: =MonthDayGallery1_1.TemplateWidth / 2 - Self.Width / 2
-                Y: =MonthDayGallery1_1.TemplateHeight * (0.75)
+                X: =MonthDayGallery1_2.TemplateWidth / 2 - Self.Width / 2
+                Y: =MonthDayGallery1_2.TemplateHeight * (0.75)
                 ZIndex: =1
 
-            Subcircle1_1 As circle:
+            Subcircle1_2 As circle:
                 Fill: =RGBA(116, 39, 116, 1)
-                Height: =3 * Title2_1.Size
+                Height: =3 * Title2_2.Size
                 OnSelect: =Select(Parent)
-                Visible: =And(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, Title2_1.Visible)
+                Visible: =And(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, Title2_2.Visible)
                 Width: =Self.Height
-                X: =MonthDayGallery1_1.TemplateWidth/2 - Self.Width/2
+                X: =MonthDayGallery1_2.TemplateWidth/2 - Self.Width/2
                 ZIndex: =2
 
-            Title2_1 As label:
+            Title2_2 As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
-                Color: =If(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(255, 255, 255, 1), DateAdd(_firstDayInView, ThisItem.Value) = Today(), RGBA(47, 41, 43, 1), LblMonthSelected1_1.Color)
+                Color: =If(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(255, 255, 255, 1), DateAdd(_firstDayInView, ThisItem.Value) = Today(), RGBA(47, 41, 43, 1), LblMonthSelected1_2.Color)
                 Fill: |-
                     =/*Fill value changes if the gallery item day = today, or if it lies outside of the current month*/             
                     If(
                         /*Date selected is today*/
                         DateAdd(_firstDayInView, ThisItem.Value) = Today() && DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(0,0,0,0),
                         /*Today when it is not selected*/
-                        DateAdd(_firstDayInView, ThisItem.Value) = Today(), ColorFade(Subcircle1_1.Fill, 0.67), 
+                        DateAdd(_firstDayInView, ThisItem.Value) = Today(), ColorFade(Subcircle1_2.Fill, 0.67), 
                         /*The day is outside the range of the currently selected month*/
                         Abs(Self.Text - ThisItem.Value) > 10,RGBA(200, 200, 200, 0.3), RGBA(0, 0, 0, 0))
                 FocusedBorderColor: =Self.Color
@@ -1673,11 +1673,11 @@ AllRevenues As screen:
                 Visible: |-
                     =/*This item is in a row containing no days of the visible month. It is in the row after the row where the last day of the month occurs*/ 
                      !(DateAdd(_firstDayInView,ThisItem.Value,Days) - Weekday(DateAdd(_firstDayInView,ThisItem.Value,Days)) + 1 > _lastDayOfMonth)
-                Width: =MonthDayGallery1_1.TemplateWidth
+                Width: =MonthDayGallery1_2.TemplateWidth
                 Wrap: =false
                 ZIndex: =3
 
-            Gallery4 As gallery.galleryHorizontal:
+            Gallery4_1 As gallery.galleryHorizontal:
                 Height: =48
                 Items: |-
                     =//'Revenue Status' = (drpRevStatus.Selected.Value)
@@ -1687,7 +1687,7 @@ AllRevenues As screen:
                             _firstDayInView,
                             ThisItem.Value,
                             Days
-                        ), IsBlank(galRevStatusBar.Selected.Value) || 'Revenue Status' = galRevStatusBar.Selected.Value)
+                        ), IsBlank(galExpenseStatusBar.Selected.Value) || 'Revenue Status' = galExpenseStatusBar.Selected.Value)
                 TemplateSize: =191
                 Visible: |
                     =false
@@ -1695,7 +1695,7 @@ AllRevenues As screen:
                 Y: =41
                 ZIndex: =4
 
-                Button7 As button:
+                Button7_1 As button:
                     Fill: =Switch(Text(ThisItem.'Revenue Status'), "1. Plan",GoldenRod,"2. Approved",MediumSeaGreen,"3. Actual",LightSkyBlue,"4. Rejected",FireBrick )
                     Height: =22
                     OnSelect: =Set(varItemRev,ThisItem);Set(varPopUpNewRev,true)
@@ -1705,10 +1705,10 @@ AllRevenues As screen:
                     RadiusTopRight: =0
                     Text: =ThisItem.'Revenue Name'
                     Width: =191
-                    Y: =44
+                    Y: =16
                     ZIndex: =1
 
-            Gallery7 As gallery.galleryVertical:
+            Gallery7_1 As gallery.galleryVertical:
                 Height: =77
                 Items: |-
                     =//'Revenue Status' = (drpRevStatus.Selected.Value)
@@ -1718,7 +1718,7 @@ AllRevenues As screen:
                             _firstDayInView,
                             ThisItem.Value,
                             Days
-                        ), IsBlank(galRevStatusBar.Selected.Value) || 'Revenue Status' = galRevStatusBar.Selected.Value)
+                        ), IsBlank(galExpenseStatusBar.Selected.Value) || 'Revenue Status' = galExpenseStatusBar.Selected.Value)
                 Layout: =Layout.Vertical
                 ShowScrollbar: =false
                 TemplatePadding: =0
@@ -1727,11 +1727,11 @@ AllRevenues As screen:
                 Y: =28
                 ZIndex: =5
 
-                Button8 As button:
+                Button8_1 As button:
                     Fill: =Switch(Text(ThisItem.'Revenue Status'), "1. Plan",GoldenRod,"2. Actual",MediumSeaGreen,"3. Actual",LightSkyBlue,"4. Rejected",FireBrick )
                     Height: =22
                     OnSelect: |-
-                        =Set(varItemRev,ThisItem);Set(varPopUpCalDetails,true);ViewForm(formNewRevenue_1); UpdateContext({mytext:"Edit"})
+                        =Set(varItemRev,ThisItem);Set(varPopUpCalDetails,true);ViewForm(formNewRevenue_5); UpdateContext({mytext:"Edit"})
                     RadiusBottomLeft: =0
                     RadiusBottomRight: =0
                     RadiusTopLeft: =0
@@ -1741,7 +1741,7 @@ AllRevenues As screen:
                     X: =24
                     ZIndex: =1
 
-            Label5 As label:
+            Label5_1 As label:
                 OnSelect: =Select(Parent)
                 Text: |-
                     =//If(CountRows(Filter(Revenues,'Expected Date' = _dateSelected))>2,CountRows(Filter(Revenues,'Expected Date' = _dateSelected)), "no more") 
@@ -1750,7 +1750,7 @@ AllRevenues As screen:
                 Y: =61
                 ZIndex: =6
 
-        iconPrevMonth1_1 As icon.ChevronLeft:
+        iconPrevMonth1_2 As icon.ChevronLeft:
             Color: =RGBA(116, 39, 116, 1)
             Height: =40
             Icon: =Icon.BackArrow
@@ -1773,7 +1773,7 @@ AllRevenues As screen:
             Y: =136
             ZIndex: =36
 
-        iconNextMonth1_1 As icon.ChevronRight:
+        iconNextMonth1_2 As icon.ChevronRight:
             Color: =RGBA(116, 39, 116, 1)
             Height: =40
             Icon: =Icon.NextArrow
@@ -1796,21 +1796,21 @@ AllRevenues As screen:
             Y: =136
             ZIndex: =37
 
-    PopUpEditRev As group:
+    PopUpEditRev_1 As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =61
 
-        rtgPopUp2_8 As rectangle:
+        rtgPopUp2_12 As rectangle:
             Fill: =RGBA(240, 240, 240, 0.7)
             Height: =768
             Visible: =varPopUpEditRev
             Width: =1440
             ZIndex: =56
 
-        rtgPopUp1_8 As rectangle:
+        rtgPopUp1_11 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =768
             Visible: =varPopUpEditRev
@@ -1818,10 +1818,10 @@ AllRevenues As screen:
             X: =878
             ZIndex: =57
 
-        formNewRevenue_2 As form:
+        formNewRevenue_6 As form:
             DataSource: =Revenues
             Height: =629
-            Item: =galRev.Selected
+            Item: =galExpense.Selected
             SnapToColumns: =false
             Visible: =varPopUpEditRev
             Width: =516
@@ -1829,22 +1829,22 @@ AllRevenues As screen:
             Y: =32
             ZIndex: =58
 
-            "'Project Name_DataCard1_2' As typedDataCard.comboBoxEditCard":
+            "'Project Name_DataCard1_6' As typedDataCard.comboBoxEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_ProjectName"
                 Default: =ThisItem.ProjectName
-                DisplayMode: =If(!IsBlankOrError(DataCardValue17_2),DisplayMode.Disabled, Edit)
+                DisplayMode: =If(!IsBlankOrError(DataCardValue17_6),DisplayMode.Disabled, Edit)
                 DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_ProjectName")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue17_2.Selected
+                Update: =DataCardValue17_6.Selected
                 Width: =516
                 X: =1
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey18_2 As label:
+                DataCardKey18_6 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -1856,7 +1856,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue17_2 As combobox:
+                DataCardValue17_6 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -1869,7 +1869,7 @@ AllRevenues As screen:
                     Items: =Choices([@Revenues].ProjectName)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["tl_project"]
-                    SearchItems: =Search(Choices([@Revenues].ProjectName),DataCardValue17_2.SearchText,"tl_project")
+                    SearchItems: =Search(Choices([@Revenues].ProjectName),DataCardValue17_6.SearchText,"tl_project")
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
@@ -1877,7 +1877,7 @@ AllRevenues As screen:
                     Y: =42
                     ZIndex: =2
 
-                ErrorMessage16_2 As label:
+                ErrorMessage16_6 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1889,35 +1889,35 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue17_2.Y + DataCardValue17_2.Height
+                    Y: =DataCardValue17_6.Y + DataCardValue17_6.Height
                     ZIndex: =3
 
-                StarVisible16_2 As label:
+                StarVisible16_6 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey18_2.Height
+                    Height: =DataCardKey18_6.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey18_2.Y
+                    Y: =DataCardKey18_6.Y
                     ZIndex: =4
 
-            Installments_DataCard1_2 As typedDataCard.comboBoxOptionSetSingleEditCard:
+            Installments_DataCard1_6 As typedDataCard.comboBoxOptionSetSingleEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_installments"
                 Default: =ThisItem.Installments
-                DisplayMode: =If(!IsBlankOrError(DataCardValue15_2),DisplayMode.Disabled, Edit)
+                DisplayMode: =If(!IsBlankOrError(DataCardValue15_6),DisplayMode.Disabled, Edit)
                 DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_installments")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue15_2.Selected.Value
+                Update: =DataCardValue15_6.Selected.Value
                 Width: =516
                 X: =2
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey16_2 As label:
+                DataCardKey16_6 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -1929,7 +1929,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue15_2 As combobox:
+                DataCardValue15_6 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     ChevronBackground: =White
@@ -1951,7 +1951,7 @@ AllRevenues As screen:
                     Y: =42
                     ZIndex: =2
 
-                ErrorMessage14_2 As label:
+                ErrorMessage14_6 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -1963,20 +1963,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue15_2.Y + DataCardValue15_2.Height
+                    Y: =DataCardValue15_6.Y + DataCardValue15_6.Height
                     ZIndex: =3
 
-                StarVisible14_2 As label:
+                StarVisible14_6 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey16_2.Height
+                    Height: =DataCardKey16_6.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey16_2.Y
+                    Y: =DataCardKey16_6.Y
                     ZIndex: =4
 
-            "'Revenue Status_DataCard1_2' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            "'Revenue Status_DataCard1_6' As typedDataCard.comboBoxOptionSetSingleEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_status"
                 Default: =ThisItem.'Revenue Status'
@@ -1985,13 +1985,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue18_2.Selected.Value
+                Update: =DataCardValue18_6.Selected.Value
                 Width: =258
                 X: =3
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey19_2 As label:
+                DataCardKey19_6 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -2003,7 +2003,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue18_2 As combobox:
+                DataCardValue18_6 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -2023,10 +2023,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey19_2.Y + DataCardKey19_2.Height + 5
+                    Y: =DataCardKey19_6.Y + DataCardKey19_6.Height + 5
                     ZIndex: =2
 
-                ErrorMessage17_2 As label:
+                ErrorMessage17_6 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2038,35 +2038,35 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue18_2.Y + DataCardValue18_2.Height
+                    Y: =DataCardValue18_6.Y + DataCardValue18_6.Height
                     ZIndex: =3
 
-                StarVisible17_2 As label:
+                StarVisible17_6 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey19_2.Height
+                    Height: =DataCardKey19_6.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey19_2.Y
+                    Y: =DataCardKey19_6.Y
                     ZIndex: =4
 
-            Planner_DataCard2_2 As typedDataCard.comboBoxEditCard:
+            Planner_DataCard2_6 As typedDataCard.comboBoxEditCard:
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_Planner"
                 Default: =ThisItem.Planner
-                DisplayMode: =If(!IsBlankOrError(DataCardValue16_2),DisplayMode.Disabled, Edit)
+                DisplayMode: =If(!IsBlankOrError(DataCardValue16_6),DisplayMode.Disabled, Edit)
                 DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_Planner")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue16_2.Selected
+                Update: =DataCardValue16_6.Selected
                 Width: =258
                 X: =4
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey8_2 As label:
+                DataCardKey8_6 As label:
                     AutoHeight: =true
                     Height: =34
                     Text: =Parent.DisplayName
@@ -2076,7 +2076,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue16_2 As combobox:
+                DataCardValue16_6 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     ChevronBackground: =White
@@ -2092,15 +2092,15 @@ AllRevenues As screen:
                     Items: =Choices([@Revenues].tl_Planner)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                     SearchFields: =["displayname"]
-                    SearchItems: =Search(Choices([@Revenues].tl_Planner),DataCardValue16_2.SearchText,"displayname")
+                    SearchItems: =Search(Choices([@Revenues].tl_Planner),DataCardValue16_6.SearchText,"displayname")
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey8_2.Y + DataCardKey8_2.Height + 5
+                    Y: =DataCardKey8_6.Y + DataCardKey8_6.Height + 5
                     ZIndex: =2
 
-                ErrorMessage15_2 As label:
+                ErrorMessage15_6 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2112,35 +2112,35 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue16_2.Y + DataCardValue16_2.Height
+                    Y: =DataCardValue16_6.Y + DataCardValue16_6.Height
                     ZIndex: =3
 
-                StarVisible15_2 As label:
+                StarVisible15_6 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey8_2.Height
+                    Height: =DataCardKey8_6.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey8_2.Y
+                    Y: =DataCardKey8_6.Y
                     ZIndex: =4
 
-            "'Expected Date_DataCard1_2' As typedDataCard.dateEditCard":
+            "'Expected Date_DataCard1_6' As typedDataCard.dateEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_expecteddate"
                 Default: =ThisItem.'Expected Date'
-                DisplayMode: =If(!IsBlankOrError(DataCardValue19_2),DisplayMode.Disabled, Edit)
+                DisplayMode: =If(!IsBlankOrError(DataCardValue19_6),DisplayMode.Disabled, Edit)
                 DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_expecteddate")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =99
                 Required: =false
-                Update: =DataCardValue19_2.SelectedDate
+                Update: =DataCardValue19_6.SelectedDate
                 Width: =516
                 X: =5
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey23_2 As label:
+                DataCardKey23_6 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -2152,7 +2152,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue19_2 As datepicker:
+                DataCardValue19_6 As datepicker:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     DefaultDate: =Parent.Default
@@ -2169,10 +2169,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey23_2.Y + DataCardKey23_2.Height + 5
+                    Y: =DataCardKey23_6.Y + DataCardKey23_6.Height + 5
                     ZIndex: =2
 
-                ErrorMessage21_2 As label:
+                ErrorMessage21_6 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2184,35 +2184,35 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue19_2.Y + DataCardValue19_2.Height
+                    Y: =DataCardValue19_6.Y + DataCardValue19_6.Height
                     ZIndex: =3
 
-                StarVisible21_2 As label:
+                StarVisible21_6 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey23_2.Height
+                    Height: =DataCardKey23_6.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey23_2.Y
+                    Y: =DataCardKey23_6.Y
                     ZIndex: =4
 
-            "'Expected Payment Value_DataCard1_2' As typedDataCard.numberEditCard":
+            "'Expected Payment Value_DataCard1_6' As typedDataCard.numberEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_expectedpaymentvalue"
                 Default: =ThisItem.'Expected Payment Value'
-                DisplayMode: =If(!IsBlankOrError(DataCardValue8_2),DisplayMode.Disabled, Edit)
+                DisplayMode: =If(!IsBlankOrError(DataCardValue8_6),DisplayMode.Disabled, Edit)
                 DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_expectedpaymentvalue")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =Value(DataCardValue8_2.Text)
+                Update: =Value(DataCardValue8_6.Text)
                 Width: =516
                 X: =6
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey15_2 As label:
+                DataCardKey15_6 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -2222,7 +2222,7 @@ AllRevenues As screen:
                     X: =17
                     ZIndex: =1
 
-                DataCardValue8_2 As text:
+                DataCardValue8_6 As text:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     Default: =Parent.Default
@@ -2244,7 +2244,7 @@ AllRevenues As screen:
                     Y: =49
                     ZIndex: =2
 
-                ErrorMessage13_2 As label:
+                ErrorMessage13_6 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2256,20 +2256,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue8_2.Y + DataCardValue8_2.Height
+                    Y: =DataCardValue8_6.Y + DataCardValue8_6.Height
                     ZIndex: =3
 
-                StarVisible13_2 As label:
+                StarVisible13_6 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey15_2.Height
+                    Height: =DataCardKey15_6.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey15_2.Y
+                    Y: =DataCardKey15_6.Y
                     ZIndex: =4
 
-            "'Actual Payment Date_DataCard1' As typedDataCard.dateEditCard":
+            "'Actual Payment Date_DataCard1_1' As typedDataCard.dateEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_actualpaymentdate"
                 Default: =ThisItem.'Actual Payment Date'
@@ -2278,13 +2278,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue7.SelectedDate
+                Update: =DataCardValue7_1.SelectedDate
                 Width: =516
                 X: =2
                 Y: =2
                 ZIndex: =1
 
-                DataCardKey7 As label:
+                DataCardKey7_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -2296,7 +2296,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue7 As datepicker:
+                DataCardValue7_1 As datepicker:
                     BorderColor: =If(IsBlank(Parent.Error), RGBA(166, 166, 166, 1), Color.Red)
                     BorderThickness: =1
                     DefaultDate: =Parent.Default
@@ -2313,10 +2313,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                    Y: =DataCardKey7_1.Y + DataCardKey7_1.Height + 5
                     ZIndex: =2
 
-                ErrorMessage12 As label:
+                ErrorMessage12_1 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2328,20 +2328,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue7.Y + DataCardValue7.Height
+                    Y: =DataCardValue7_1.Y + DataCardValue7_1.Height
                     ZIndex: =3
 
-                StarVisible12 As label:
+                StarVisible12_1 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey7.Height
+                    Height: =DataCardKey7_1.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey7.Y
+                    Y: =DataCardKey7_1.Y
                     ZIndex: =4
 
-            "'Actual Payment Value_DataCard1' As typedDataCard.numberEditCard":
+            "'Actual Payment Value_DataCard1_1' As typedDataCard.numberEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_actualpaymentvalue"
                 Default: =ThisItem.'Actual Payment Value'
@@ -2350,13 +2350,13 @@ AllRevenues As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =Value(DataCardValue20.Text)
+                Update: =Value(DataCardValue20_1.Text)
                 Width: =516
                 X: =0
                 Y: =3
                 ZIndex: =1
 
-                DataCardKey17 As label:
+                DataCardKey17_1 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -2368,7 +2368,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue20 As text:
+                DataCardValue20_1 As text:
                     BorderColor: =If(IsBlank(Parent.Error), RGBA(166, 166, 166, 1), Color.Red)
                     BorderThickness: =1
                     Default: =Parent.Default
@@ -2384,10 +2384,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                    Y: =DataCardKey17_1.Y + DataCardKey17_1.Height + 5
                     ZIndex: =2
 
-                ErrorMessage18 As label:
+                ErrorMessage18_1 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2399,36 +2399,36 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue20.Y + DataCardValue20.Height
+                    Y: =DataCardValue20_1.Y + DataCardValue20_1.Height
                     ZIndex: =3
 
-                StarVisible18 As label:
+                StarVisible18_1 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey17.Height
+                    Height: =DataCardKey17_1.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey17.Y
+                    Y: =DataCardKey17_1.Y
                     ZIndex: =4
 
-            "'Revenue Name_DataCard1_2' As typedDataCard.textualEditCard":
+            "'Revenue Name_DataCard1_6' As typedDataCard.textualEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_revenuename"
                 Default: =ThisItem.'Revenue Name'
-                DisplayMode: =If(!IsBlankOrError(DataCardValue6_2),DisplayMode.Disabled, Edit)
+                DisplayMode: =If(!IsBlankOrError(DataCardValue6_6),DisplayMode.Disabled, Edit)
                 DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_revenuename")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 MaxLength: =DataSourceInfo([@Revenues], DataSourceInfo.MaxLength, "tl_revenuename")
                 Required: =true
-                Update: =DataCardValue6_2.Text
+                Update: =DataCardValue6_6.Text
                 Width: =516
                 X: =0
                 Y: =0
                 ZIndex: =61
 
-                DataCardKey6_2 As label:
+                DataCardKey6_6 As label:
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
                     Height: =34
@@ -2440,7 +2440,7 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue6_2 As text:
+                DataCardValue6_6 As text:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
                     Default: =Parent.Default
@@ -2458,10 +2458,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey6_2.Y + DataCardKey6_2.Height + 5
+                    Y: =DataCardKey6_6.Y + DataCardKey6_6.Height + 5
                     ZIndex: =2
 
-                ErrorMessage6_2 As label:
+                ErrorMessage6_6 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2473,20 +2473,20 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue6_2.Y + DataCardValue6_2.Height
+                    Y: =DataCardValue6_6.Y + DataCardValue6_6.Height
                     ZIndex: =3
 
-                StarVisible6_2 As label:
+                StarVisible6_6 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey6_2.Height
+                    Height: =DataCardKey6_6.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey6_2.Y
+                    Y: =DataCardKey6_6.Y
                     ZIndex: =4
 
-        btnSaveViewDetail_5 As button:
+        btnSaveViewDetail_7 As button:
             BorderThickness: =1
             DisplayMode: |-
                 =//If(!IsBlankOrError(DataCardValue6_1) && !IsBlankOrError(DataCardValue15_1) && !IsBlankOrError(DataCardValue17_1) && !IsBlankOrError(DataCardValue8_1) && !IsBlankOrError(DataCardValue18_1) && !IsBlankOrError(DataCardValue19_1) && !IsBlankOrError(DataCardValue16_1),DisplayMode.Edit,DisplayMode.Disabled)
@@ -2494,7 +2494,7 @@ AllRevenues As screen:
             Fill: =RGBA(116, 39, 116, 1)
             FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(RGBA(116, 39, 116, 1), -20%)
-            OnSelect: =SubmitForm(formNewRevenue_2);Set(varPopUp2_2,true)   
+            OnSelect: =SubmitForm(formNewRevenue_6);Set(varPopUp2_2,true)   
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -2507,7 +2507,7 @@ AllRevenues As screen:
             Y: =689
             ZIndex: =59
 
-        Icon2_5 As icon.CancelBadge:
+        Icon2_8 As icon.CancelBadge:
             Color: =RGBA(0, 13, 75, 1)
             Height: =26
             Icon: =Icon.CancelBadge
@@ -2518,21 +2518,21 @@ AllRevenues As screen:
             Y: =10
             ZIndex: =60
 
-    PopUp2_2 As group:
+    PopUp2_4 As group:
         Height: =5
         Width: =5
         X: =80
         Y: =80
         ZIndex: =61
 
-        rtgPopUp2_5 As rectangle:
+        rtgPopUp2_13 As rectangle:
             Fill: =RGBA(240, 240, 240, 0.65)
             Height: =768
             Visible: =varPopUp2_2
             Width: =1440
             ZIndex: =62
 
-        rtgPopUp1_5 As rectangle:
+        rtgPopUp1_13 As rectangle:
             BorderColor: =RGBA(109, 49, 162, 1)
             Fill: =White
             Height: =273
@@ -2542,7 +2542,7 @@ AllRevenues As screen:
             Y: =227
             ZIndex: =63
 
-        Button2_5 As button:
+        Button2_6 As button:
             Fill: =RGBA(149, 149, 149, 1)
             HoverFill: =ColorFade(RGBA(166, 166, 166, 100), -20%)
             OnSelect: =Set(varPopUp2_2,false);Set(varPopUpEditRev,false)
@@ -2557,7 +2557,7 @@ AllRevenues As screen:
             Y: =424
             ZIndex: =65
 
-        TextInput4_2 As text:
+        TextInput4_4 As text:
             BorderThickness: =0
             Default: ="Revenue has been edited." 
             FontWeight: =FontWeight.Bold
@@ -2569,21 +2569,21 @@ AllRevenues As screen:
             Y: =303
             ZIndex: =66
 
-    PopUpNewRev As group:
+    PopUpNewExpense As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =63
 
-        rtgPopUp2_4 As rectangle:
+        rtgPopUp2_9 As rectangle:
             Fill: =RGBA(240, 240, 240, 0.7)
             Height: =768
             Visible: =varPopUpNewRev
             Width: =1440
             ZIndex: =38
 
-        rtgPopUp1_4 As rectangle:
+        rtgPopUp1_9 As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =768
             Visible: =varPopUpNewRev
@@ -2591,8 +2591,8 @@ AllRevenues As screen:
             X: =878
             ZIndex: =39
 
-        formNewRevenue As form:
-            DataSource: =Revenues
+        formNewRevenue_4 As form:
+            DataSource: =Expenses
             Height: =629
             Item: =varItemRev
             SnapToColumns: =false
@@ -2602,26 +2602,91 @@ AllRevenues As screen:
             Y: =32
             ZIndex: =40
 
-            "'Project Name_DataCard1' As typedDataCard.comboBoxEditCard":
+            "'Expense Status_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr886_expensestatus"
+                Default: =ThisItem.'Expense Status'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"cr886_expensestatus")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue27.Selected.Value
+                Width: =258
+                X: =3
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey27 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue27 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('Expense Status')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey27.Y + DataCardKey27.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage25 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue27.Y + DataCardValue27.Height
+                    ZIndex: =3
+
+                StarVisible25 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey27.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey27.Y
+                    ZIndex: =4
+
+            "'Project Name_DataCard2' As typedDataCard.comboBoxEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_ProjectName"
-                Default: =ThisItem.ProjectName
+                Default: =ThisItem.'Project Name'
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_ProjectName")
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_ProjectName")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue17.Selected
+                Update: =DataCardValue29.Selected
                 Width: =516
                 X: =1
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey18 As label:
+                DataCardKey29 As label:
                     AutoHeight: =true
-                    FontWeight: =FontWeight.Semibold
                     Height: =34
-                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -2629,30 +2694,23 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue17 As combobox:
-                    BorderColor: =RGBA(116, 116, 116, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =RGBA(255, 255, 255, 1)
-                    ChevronFill: =RGBA(153, 153, 153, 1)
-                    ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                DataCardValue29 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     DefaultSelectedItems: =Parent.Default
                     DisplayFields: =["tl_project"]
                     DisplayMode: =Parent.DisplayMode
-                    FocusedBorderThickness: =2
-                    Items: =Choices([@Revenues].ProjectName)
+                    Items: =Choices([@Expenses].tl_ProjectName)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    PressedBorderColor: =RGBA(116, 39, 116, 1)
-                    PressedColor: =RGBA(116, 39, 116, 1)
                     SearchFields: =["tl_project"]
-                    SearchItems: =Search(Choices([@Revenues].ProjectName),DataCardValue17.SearchText,"tl_project")
+                    SearchItems: =Search(Choices([@Expenses].tl_ProjectName),DataCardValue29.SearchText,"tl_project")
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                    Y: =DataCardKey29.Y + DataCardKey29.Height + 5
                     ZIndex: =2
 
-                ErrorMessage16 As label:
+                ErrorMessage27 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2664,39 +2722,37 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue17.Y + DataCardValue17.Height
+                    Y: =DataCardValue29.Y + DataCardValue29.Height
                     ZIndex: =3
 
-                StarVisible16 As label:
+                StarVisible27 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey18.Height
+                    Height: =DataCardKey29.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey18.Y
+                    Y: =DataCardKey29.Y
                     ZIndex: =4
 
-            Installments_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+            "'Expense Type_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
                 BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_installments"
-                Default: =ThisItem.Installments
+                DataField: ="tl_expensetype"
+                Default: =ThisItem.'Expense Type'
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_installments")
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensetype")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue15.Selected.Value
+                Update: =DataCardValue23.Selected.Value
                 Width: =516
-                X: =3
+                X: =2
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey16 As label:
+                DataCardKey22 As label:
                     AutoHeight: =true
-                    FontWeight: =FontWeight.Semibold
                     Height: =34
-                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -2704,33 +2760,24 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue15 As combobox:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =White
-                    ChevronFill: =RGBA(166, 166, 166, 1)
+                DataCardValue23 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     DefaultSelectedItems: =[Parent.Default]
                     DisplayFields: =["Value"]
                     DisplayMode: =Parent.DisplayMode
-                    FocusedBorderThickness: =2
                     IsSearchable: =false
-                    Items: =Choices('Installments (Revenues)')
+                    Items: =Choices('Expense Type (Expenses)')
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    PressedBorderColor: =RGBA(116, 39, 116, 1)
                     SearchFields: =["Value"]
                     SearchItems: =[]
-                    SelectionColor: =RGBA(116, 39, 116, 1)
-                    SelectionFill: =RGBA(116, 39, 116, 1)
-                    SelectionTagColor: =RGBA(116, 39, 116, 1)
-                    SelectionTagFill: =RGBA(116, 39, 116, 1)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                    Y: =DataCardKey22.Y + DataCardKey22.Height + 5
                     ZIndex: =2
 
-                ErrorMessage14 As label:
+                ErrorMessage20 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2742,39 +2789,37 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue15.Y + DataCardValue15.Height
+                    Y: =DataCardValue23.Y + DataCardValue23.Height
                     ZIndex: =3
 
-                StarVisible14 As label:
+                StarVisible20 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey16.Height
+                    Height: =DataCardKey22.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey16.Y
+                    Y: =DataCardKey22.Y
                     ZIndex: =4
 
-            "'Expected Date_DataCard1' As typedDataCard.dateEditCard":
+            Planner_DataCard1 As typedDataCard.comboBoxEditCard:
                 BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_expecteddate"
-                Default: =ThisItem.'Expected Date'
+                DataField: ="tl_Planner"
+                Default: =ThisItem.Planner
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_expecteddate")
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_Planner")
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =99
+                Height: =50
                 Required: =false
-                Update: =DataCardValue19.SelectedDate
-                Width: =516
+                Update: =DataCardValue28.Selected
+                Width: =215
                 X: =4
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey23 As label:
+                DataCardKey28 As label:
                     AutoHeight: =true
-                    FontWeight: =FontWeight.Semibold
                     Height: =34
-                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -2782,26 +2827,23 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue19 As datepicker:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    DefaultDate: =Parent.Default
+                DataCardValue28 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["displayname"]
                     DisplayMode: =Parent.DisplayMode
-                    EndYear: =Year(Today())+100
-                    Format: ="dd/mm/yyyy"
-                    IconBackground: =RGBA(116, 39, 116, 1)
-                    InputTextPlaceholder: =//If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
-                    IsEditable: =true
-                    PaddingBottom: =0
+                    Items: =Choices([@Expenses].tl_Planner)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    StartYear: =1899
+                    SearchFields: =["displayname"]
+                    SearchItems: =Search(Choices([@Expenses].tl_Planner),DataCardValue28.SearchText,"displayname")
+                    SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                    Y: =DataCardKey28.Y + DataCardKey28.Height + 5
                     ZIndex: =2
 
-                ErrorMessage21 As label:
+                ErrorMessage26 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2813,54 +2855,51 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue19.Y + DataCardValue19.Height
+                    Y: =DataCardValue28.Y + DataCardValue28.Height
                     ZIndex: =3
 
-                StarVisible21 As label:
+                StarVisible26 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey23.Height
+                    Height: =DataCardKey28.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey23.Y
+                    Y: =DataCardKey28.Y
                     ZIndex: =4
 
-            "'Expected Payment Value_DataCard1' As typedDataCard.numberEditCard":
+            "'Expense Note_DataCard1' As typedDataCard.textualMultiLineEditCard":
                 BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_expectedpaymentvalue"
-                Default: =ThisItem.'Expected Payment Value'
+                DataField: ="tl_expensenote"
+                Default: =ThisItem.'Expense Note'
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_expectedpaymentvalue")
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensenote")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =Value(DataCardValue8.Text)
+                Update: =DataCardValue26.Text
                 Width: =516
-                X: =5
+                X: =7
                 Y: =0
                 ZIndex: =1
 
-                DataCardKey15 As label:
+                DataCardKey26 As label:
                     AutoHeight: =true
-                    FontWeight: =FontWeight.Semibold
                     Height: =34
-                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
+                    Wrap: =false
                     X: =30
+                    Y: =10
                     ZIndex: =1
 
-                DataCardValue8 As text:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
+                DataCardValue26 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     Default: =Parent.Default
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
-                    Format: =TextFormat.Number
-                    HoverBorderColor: =RGBA(116, 39, 116, 1)
-                    HoverColor: =White
-                    HoverFill: =White
+                    Height: =80
+                    Mode: =TextMode.MultiLine
                     PaddingLeft: =5
                     RadiusBottomLeft: =0
                     RadiusBottomRight: =0
@@ -2869,10 +2908,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =49
+                    Y: =DataCardKey26.Y + DataCardKey26.Height + 5
                     ZIndex: =2
 
-                ErrorMessage13 As label:
+                ErrorMessage24 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -2884,189 +2923,37 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue8.Y + DataCardValue8.Height
+                    Y: =DataCardValue26.Y + DataCardValue26.Height
                     ZIndex: =3
 
-                StarVisible13 As label:
+                StarVisible24 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey15.Height
+                    Height: =DataCardKey26.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey15.Y
+                    Y: =DataCardKey26.Y
                     ZIndex: =4
 
-            "'Revenue Status_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            "'Expected Payment Date_DataCard1' As typedDataCard.dateEditCard":
                 BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_status"
-                Default: =ThisItem.'Revenue Status'
+                DataField: ="tl_expectedpaymentdate"
+                Default: =ThisItem.'Expected Payment Date'
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_status")
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expectedpaymentdate")
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =50
                 Required: =false
-                Update: =DataCardValue18.Selected.Value
-                Width: =258
-                X: =0
-                Y: =2
-                ZIndex: =1
-
-                DataCardKey19 As label:
-                    AutoHeight: =true
-                    FontWeight: =FontWeight.Semibold
-                    Height: =34
-                    Size: =12
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue18 As combobox:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =RGBA(255, 255, 255, 1)
-                    ChevronFill: =RGBA(149, 149, 149, 1)
-                    DefaultSelectedItems: =[Parent.Default]
-                    DisplayFields: =["Value"]
-                    DisplayMode: =Parent.DisplayMode
-                    IsSearchable: =false
-                    Items: =Choices('Revenue Status (Revenues)')
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectMultiple: =false
-                    Tooltip: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey19.Y + DataCardKey19.Height + 5
-                    ZIndex: =2
-
-                ErrorMessage17 As label:
-                    AutoHeight: =true
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardValue18.Y + DataCardValue18.Height
-                    ZIndex: =3
-
-                StarVisible17 As label:
-                    Align: =Align.Center
-                    Height: =DataCardKey19.Height
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    Y: =DataCardKey19.Y
-                    ZIndex: =4
-
-            Planner_DataCard2 As typedDataCard.comboBoxEditCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_Planner"
-                Default: =ThisItem.Planner
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_Planner")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                Required: =false
-                Update: =DataCardValue16.Selected
-                Width: =258
-                X: =1
-                Y: =2
-                ZIndex: =1
-
-                DataCardKey8 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue16 As combobox:
-                    BorderColor: =If(IsBlank(Parent.Error), RGBA(166, 166, 166, 1), Color.Red)
-                    BorderThickness: =1
-                    ChevronBackground: =White
-                    ChevronFill: =RGBA(153, 153, 153, 1)
-                    ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
-                    DefaultSelectedItems: |-
-                        =//If(formNewRevenue.Mode = FormMode.New,{Value:UserName},Parent.Default)
-                    DisplayFields: =["displayname"]
-                    DisplayMode: =Parent.DisplayMode
-                    FocusedBorderThickness: =2
-                    HoverBorderColor: =RGBA(116, 39, 116, 1)
-                    HoverFill: =RGBA(116, 39, 116, 1)
-                    InputTextPlaceholder: =
-                    Items: =Choices([@Revenues].tl_Planner)
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    PressedFill: =RGBA(116, 39, 116, 1)
-                    SearchFields: =["displayname"]
-                    SearchItems: =Search(Choices([@Revenues].tl_Planner),DataCardValue16.SearchText,"displayname")
-                    SelectionFill: =RGBA(116, 39, 116, 1)
-                    SelectMultiple: =false
-                    Tooltip: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =44
-                    ZIndex: =2
-
-                ErrorMessage15 As label:
-                    AutoHeight: =true
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardValue16.Y + DataCardValue16.Height
-                    ZIndex: =3
-
-                StarVisible15 As label:
-                    Align: =Align.Center
-                    Height: =DataCardKey8.Height
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    Y: =DataCardKey8.Y
-                    ZIndex: =4
-
-            "'Revenue Name_DataCard1' As typedDataCard.textualEditCard":
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_revenuename"
-                Default: =ThisItem.'Revenue Name'
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_revenuename")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                MaxLength: =DataSourceInfo([@Revenues], DataSourceInfo.MaxLength, "tl_revenuename")
-                Required: =true
-                Update: =DataCardValue6.Text
+                Update: =DataCardValue30.SelectedDate
                 Width: =516
-                X: =0
+                X: =5
                 Y: =0
-                ZIndex: =61
+                ZIndex: =1
 
-                DataCardKey6 As label:
+                DataCardKey30 As label:
                     AutoHeight: =true
-                    FontWeight: =FontWeight.Semibold
                     Height: =34
-                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -3074,15 +2961,144 @@ AllRevenues As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue6 As text:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
+                DataCardValue30 As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultDate: =Parent.Default
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey30.Y + DataCardKey30.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage28 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue30.Y + DataCardValue30.Height
+                    ZIndex: =3
+
+                StarVisible28 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey30.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey30.Y
+                    ZIndex: =4
+
+            "'Expected Payment Value_DataCard2' As typedDataCard.numberEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tl_expectedpaymentvalue"
+                Default: =ThisItem.'Expected Payment Value'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expectedpaymentvalue")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =Value(DataCardValue31.Text)
+                Width: =516
+                X: =6
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey31 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue31 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     Default: =Parent.Default
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
-                    FocusedBorderThickness: =2
-                    HoverBorderColor: =RGBA(116, 39, 116, 1)
-                    HoverFill: =White
+                    Format: =TextFormat.Number
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey31.Y + DataCardKey31.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage29 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue31.Y + DataCardValue31.Height
+                    ZIndex: =3
+
+                StarVisible29 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey31.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey31.Y
+                    ZIndex: =4
+
+            Name_DataCard1 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tl_name"
+                Default: =ThisItem.Name
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "tl_name")
+                Required: =true
+                Update: =DataCardValue21.Text
+                Width: =516
+                X: =0
+                Y: =0
+                ZIndex: =41
+
+                DataCardKey20 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue21 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
                     MaxLength: =Parent.MaxLength
                     PaddingLeft: =5
                     RadiusBottomLeft: =0
@@ -3092,10 +3108,10 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                    Y: =DataCardKey20.Y + DataCardKey20.Height + 5
                     ZIndex: =2
 
-                ErrorMessage6 As label:
+                ErrorMessage19 As label:
                     AutoHeight: =true
                     Height: =10
                     Live: =Live.Assertive
@@ -3107,23 +3123,23 @@ AllRevenues As screen:
                     Visible: =Parent.DisplayMode=DisplayMode.Edit
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =DataCardValue6.Y + DataCardValue6.Height
+                    Y: =DataCardValue21.Y + DataCardValue21.Height
                     ZIndex: =3
 
-                StarVisible6 As label:
+                StarVisible19 As label:
                     Align: =Align.Center
-                    Height: =DataCardKey6.Height
+                    Height: =DataCardKey20.Height
                     Text: ="*"
                     Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                     Width: =30
                     Wrap: =false
-                    Y: =DataCardKey6.Y
+                    Y: =DataCardKey20.Y
                     ZIndex: =4
 
-        btnSaveViewDetail_2 As button:
+        btnSaveViewDetail_8 As button:
             BorderThickness: =1
             DisplayMode: |-
-                =If(!IsBlankOrError(DataCardValue6) && !IsBlankOrError(DataCardValue15) && !IsBlankOrError(DataCardValue17) && !IsBlankOrError(DataCardValue8) && !IsBlankOrError(DataCardValue18) && !IsBlankOrError(DataCardValue19) && !IsBlankOrError(DataCardValue16),DisplayMode.Edit,DisplayMode.Disabled)
+                =If(!IsBlankOrError(DataCardValue6_4) && !IsBlankOrError(DataCardValue15_4) && !IsBlankOrError(DataCardValue17_4) && !IsBlankOrError(DataCardValue8_4) && !IsBlankOrError(DataCardValue18_4) && !IsBlankOrError(DataCardValue19_4) && !IsBlankOrError(DataCardValue16_4),DisplayMode.Edit,DisplayMode.Disabled)
                 //If(!IsBlankOrError(DataCardValue21) && !IsBlankOrError(DataCardValue23) && !IsBlankOrError(DataCardValue24) && !IsBlankOrError(DataCardValue25) && !IsBlankOrError(DataCardValue26) && !IsBlankOrError(DataCardValue27) && !IsBlankOrError(DataCardValue28),DisplayMode.Edit,DisplayMode.Disabled)
             Fill: =RGBA(116, 39, 116, 1)
             FontWeight: =FontWeight.Bold
@@ -3131,7 +3147,7 @@ AllRevenues As screen:
             OnSelect: |-
                 =//Clear(colAttachsGallery); ForAll(galAttach.AllItems,Collect(colAttachsGallery,{Title:lblTitle.Text,DataStream:imgDataStream.Image}));ProjectsManagementFlow.Run(JSON(colAttachsGallery,JSONFormat.IncludeBinaryData),txtProjectName.Text);
                 //SubmitForm(formNewRevenue);NewForm(formNewRevenue);
-                Set(varPopUp2,true);SubmitForm(formNewRevenue);
+                Set(varPopUp2,true);SubmitForm(formNewRevenue_4);
                 //NewForm(Form1)
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -3145,7 +3161,7 @@ AllRevenues As screen:
             Y: =702
             ZIndex: =41
 
-        Icon2_2 As icon.CancelBadge:
+        Icon2_6 As icon.CancelBadge:
             Color: =RGBA(0, 13, 75, 1)
             Height: =26
             Icon: =Icon.CancelBadge
@@ -3156,7 +3172,7 @@ AllRevenues As screen:
             Y: =10
             ZIndex: =42
 
-    Button5 As button:
+    Button5_1 As button:
         OnSelect: =Set(varPopUp2_2,true)   
         Text: ="Button"
         Visible: =varPopUpEditRev

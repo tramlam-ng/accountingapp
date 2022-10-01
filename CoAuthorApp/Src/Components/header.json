@@ -51,7 +51,7 @@
         "Name": "Rectangle6",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 518,
+        "PublishOrderIndex": 764,
         "Rules": [
           {
             "Category": "Design",
@@ -182,7 +182,7 @@
             "Name": "galleryTemplate2",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 520,
+            "PublishOrderIndex": 766,
             "Rules": [
               {
                 "Category": "Design",
@@ -405,7 +405,7 @@
             "Name": "Button1",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 521,
+            "PublishOrderIndex": 767,
             "Rules": [
               {
                 "Category": "Data",
@@ -731,7 +731,7 @@
         "Name": "Gallery2",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 519,
+        "PublishOrderIndex": 765,
         "Rules": [
           {
             "Category": "Data",
@@ -956,7 +956,7 @@
         "Name": "Rectangle2_4",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 522,
+        "PublishOrderIndex": 768,
         "Rules": [
           {
             "Category": "Design",
@@ -1126,7 +1126,7 @@
         "Name": "Rectangle2",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 523,
+        "PublishOrderIndex": 769,
         "Rules": [
           {
             "Category": "Design",
@@ -1303,7 +1303,7 @@
         "Name": "Rectangle2_1",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 524,
+        "PublishOrderIndex": 770,
         "Rules": [
           {
             "Category": "Design",
@@ -1473,7 +1473,7 @@
         "Name": "Rectangle2_2",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 525,
+        "PublishOrderIndex": 771,
         "Rules": [
           {
             "Category": "Design",
@@ -1650,7 +1650,7 @@
         "Name": "Rectangle2_3",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 526,
+        "PublishOrderIndex": 772,
         "Rules": [
           {
             "Category": "Design",
@@ -1791,7 +1791,7 @@
         "Name": "Group4",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 527,
+        "PublishOrderIndex": 773,
         "Rules": [
           {
             "Category": "Design",
