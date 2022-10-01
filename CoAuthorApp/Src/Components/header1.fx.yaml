@@ -1,0 +1,18 @@
+header1 As CanvasComponent:
+    Fill: =RGBA(255, 255, 255, 1)
+    Height: =50
+    Width: =1440
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Icon1 As icon.Import:
+        Color: =RGBA(116, 39, 116, 1)
+        Height: =35
+        Icon: =Icon.Import
+        OnSelect: =Back()
+        Width: =35
+        X: =1404
+        Y: =8
+        ZIndex: =1
+

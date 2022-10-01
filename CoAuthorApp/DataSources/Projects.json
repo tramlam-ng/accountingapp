@@ -1,0 +1,177 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tl_projectses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tl_projects",
+    "MaxGetRowsCount": 500,
+    "Name": "Projects",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "emailaddress": "Email Address",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tl_client": "Client",
+      "tl_contractattachment": "Contract Attachment",
+      "tl_contractimage": "Contract Image",
+      "tl_contractimageid": "tl_ContractImageId",
+      "tl_dealvalue": "Deal Value",
+      "tl_idnum": "IDNum",
+      "tl_Person": "Person",
+      "tl_plstatus": "P&L Status",
+      "tl_project": "Project",
+      "tl_projects_ActivityPointers": "Activities",
+      "tl_projects_adx_alertsubscriptions": "Alert Subscriptions",
+      "tl_projects_adx_inviteredemptions": "Invite Redemptions",
+      "tl_projects_adx_portalcomments": "Portal Comments",
+      "tl_projects_Annotations": "Notes",
+      "tl_projects_Appointments": "Appointments",
+      "tl_projects_AsyncOperations": "System Jobs",
+      "tl_projects_BulkDeleteFailures": "Bulk Delete Failures",
+      "tl_projects_chats": "Teams chats",
+      "tl_projects_connections1": "Connections (tl_projects_connections1)",
+      "tl_projects_connections2": "Connections (tl_projects_connections2)",
+      "tl_projects_DuplicateBaseRecord": "Duplicate Records (tl_projects_DuplicateBaseRecord)",
+      "tl_projects_DuplicateMatchingRecord": "Duplicate Records (tl_projects_DuplicateMatchingRecord)",
+      "tl_projects_Emails": "Email Messages",
+      "tl_projects_Faxes": "Faxes",
+      "tl_projects_FileAttachments": "FileAttachments",
+      "tl_projects_Letters": "Letters",
+      "tl_projects_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tl_projects_msdyn_bookingalerts": "Booking Alerts",
+      "tl_projects_msfp_alerts": "Customer Voice alert",
+      "tl_projects_msfp_surveyinvites": "Customer Voice survey invites",
+      "tl_projects_msfp_surveyresponses": "Customer Voice survey responses",
+      "tl_projects_PhoneCalls": "Phone Calls",
+      "tl_projects_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tl_projects_ProcessSession": "Process Sessions",
+      "tl_projects_RecurringAppointmentMasters": "Recurring Appointments",
+      "tl_projects_SharePointDocumentLocations": "Document Locations",
+      "tl_projects_SyncErrors": "Sync Errors",
+      "tl_projects_Tasks": "Tasks",
+      "tl_projects_Teams": "Teams",
+      "tl_projectsid": "Projects",
+      "tl_projectstatus": "Project Status",
+      "tl_tl_expense_ProjectName_tl_projects": "Expenses",
+      "tl_tl_revenue_ProjectName_tl_projects": "Revenues",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Projects",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Projects (Views)",
+    "Name": "_tl_projects_views",
+    "RelatedEntityName": "Projects",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1a8c71da-b59b-4a80-b627-51223ced7e78": "Projects Advanced Find View",
+      "5dad57b9-8248-4405-a3b5-af79270ff0a3": "Inactive Projects",
+      "6804ee87-941a-43da-b086-157fb70b30f4": "Projects Lookup View",
+      "6b204330-e217-43a0-b42d-d9f49ed945f1": "Projects Associated View",
+      "e93928f0-9744-4c5d-8783-8c5117d4f3f9": "Active Projects"
+    }
+  },
+  {
+    "DisplayName": "Status (Projects)",
+    "Name": "tl_projects_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Projects)",
+    "Name": "tl_projects_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "P&L Status (Projects)",
+    "Name": "tl_projects_tl_plstatus",
+    "OptionSetInfoNameMapping": {
+      "1": "1. Plan",
+      "2": "2. Approve",
+      "3": "3. Running",
+      "4": "4. Final",
+      "5": "5. Done"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tl_plstatus",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tl_plstatus",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Project Status (Projects)",
+    "Name": "tl_projects_tl_projectstatus",
+    "OptionSetInfoNameMapping": {
+      "1": "1. Contract",
+      "2": "2. Execution",
+      "3": "3. Liquidation",
+      "4": "4. Done"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tl_projectstatus",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tl_projectstatus",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "cdaca338-c49b-4381-9113-c8664ab1d4c1",
+    "Name": "ProjectsManagementFlow",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "ef36bd47-7d2e-ed11-9db2-000d3a08e524"
+  }
+]

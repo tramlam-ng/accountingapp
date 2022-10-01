@@ -1,0 +1,173 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tl_expenses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tl_expense",
+    "MaxGetRowsCount": 500,
+    "Name": "Expenses",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cr886_actualpaymentvalue": "Actual Payment Value",
+      "cr886_expensestatus": "Expense Status",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tl_actualpaymentdate": "Actual Payment Date",
+      "tl_expectedpaymentdate": "Expected Payment Date",
+      "tl_expectedpaymentvalue": "Expected Payment Value",
+      "tl_expense_ActivityPointers": "Activities",
+      "tl_expense_adx_alertsubscriptions": "Alert Subscriptions",
+      "tl_expense_adx_inviteredemptions": "Invite Redemptions",
+      "tl_expense_adx_portalcomments": "Portal Comments",
+      "tl_expense_Annotations": "Notes",
+      "tl_expense_Appointments": "Appointments",
+      "tl_expense_AsyncOperations": "System Jobs",
+      "tl_expense_BulkDeleteFailures": "Bulk Delete Failures",
+      "tl_expense_chats": "Teams chats",
+      "tl_expense_DuplicateBaseRecord": "Duplicate Records (tl_expense_DuplicateBaseRecord)",
+      "tl_expense_DuplicateMatchingRecord": "Duplicate Records (tl_expense_DuplicateMatchingRecord)",
+      "tl_expense_Emails": "Email Messages",
+      "tl_expense_Faxes": "Faxes",
+      "tl_expense_Letters": "Letters",
+      "tl_expense_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tl_expense_msdyn_bookingalerts": "Booking Alerts",
+      "tl_expense_msfp_alerts": "Customer Voice alert",
+      "tl_expense_msfp_surveyinvites": "Customer Voice survey invites",
+      "tl_expense_msfp_surveyresponses": "Customer Voice survey responses",
+      "tl_expense_PhoneCalls": "Phone Calls",
+      "tl_expense_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tl_expense_ProcessSession": "Process Sessions",
+      "tl_expense_RecurringAppointmentMasters": "Recurring Appointments",
+      "tl_expense_SharePointDocumentLocations": "Document Locations",
+      "tl_expense_SyncErrors": "Sync Errors",
+      "tl_expense_Tasks": "Tasks",
+      "tl_expenseid": "Expense",
+      "tl_expenseimage": "Expense Image",
+      "tl_expenseimageid": "tl_ExpenseImageId",
+      "tl_expensename": "Expense Name",
+      "tl_expensenote": "Expense Note",
+      "tl_expensetype": "Expense Type",
+      "tl_name": "Name",
+      "tl_Planner": "Planner",
+      "tl_ProjectName": "Project Name",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Expenses",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Expenses (Views)",
+    "Name": "_tl_expense_views",
+    "RelatedEntityName": "Expenses",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "099e25d2-2b39-47fb-8db8-542defd11a15": "Inactive Expenses",
+      "31c55669-e982-4251-ad33-b01a1c87d8e2": "Active Expenses",
+      "ae23b8d3-7eee-4369-843f-c96106aa0d9e": "Expense Advanced Find View",
+      "ccca0a70-74ae-4d3e-8c27-7788f9963e56": "Expense Associated View",
+      "fbd75132-019a-452c-a347-e0d8639f5681": "Expense Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Expense Status",
+    "Name": "new_expensestatus",
+    "OptionSetInfoNameMapping": {
+      "1": "1. Plan",
+      "2": "2. Approved",
+      "3": "3. Actual",
+      "4": "4. Rejected"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr886_expensestatus",
+        "OptionSetReferenceEntityName": "Expenses"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr886_expensestatus",
+    "RelatedEntityName": "Expenses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Expenses)",
+    "Name": "tl_expense_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Expenses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Expenses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Expenses)",
+    "Name": "tl_expense_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Expenses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Expenses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Expense Type (Expenses)",
+    "Name": "tl_expense_tl_expensetype",
+    "OptionSetInfoNameMapping": {
+      "0": "Hotel",
+      "1": "Travelling",
+      "2": "F&B",
+      "3": "Transportation",
+      "4": "Others"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tl_expensetype",
+        "OptionSetReferenceEntityName": "Expenses"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tl_expensetype",
+    "RelatedEntityName": "Expenses",
+    "Type": "OptionSetInfo"
+  }
+]

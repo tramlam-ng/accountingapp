@@ -1,0 +1,152 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "tl_revenues",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "tl_revenue",
+    "MaxGetRowsCount": 500,
+    "Name": "Revenues",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "tl_actualpaymentdate": "Actual Payment Date",
+      "tl_actualpaymentvalue": "Actual Payment Value",
+      "tl_expecteddate": "Expected Date",
+      "tl_expectedpaymentdate": "Expected Payment Date",
+      "tl_expectedpaymentvalue": "Expected Payment Value",
+      "tl_idnum": "IDNum",
+      "tl_installments": "Installments",
+      "tl_Planner": "Planner",
+      "tl_ProjectName": "ProjectName",
+      "tl_revenue_AsyncOperations": "System Jobs",
+      "tl_revenue_BulkDeleteFailures": "Bulk Delete Failures",
+      "tl_revenue_DuplicateBaseRecord": "Duplicate Records (tl_revenue_DuplicateBaseRecord)",
+      "tl_revenue_DuplicateMatchingRecord": "Duplicate Records (tl_revenue_DuplicateMatchingRecord)",
+      "tl_revenue_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "tl_revenue_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "tl_revenue_ProcessSession": "Process Sessions",
+      "tl_revenue_SyncErrors": "Sync Errors",
+      "tl_revenueid": "Revenue",
+      "tl_revenuename": "Revenue Name",
+      "tl_revimage": "Rev Image",
+      "tl_revimageid": "tl_RevImageId",
+      "tl_status": "Revenue Status",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Revenues",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Revenues (Views)",
+    "Name": "_tl_revenue_views",
+    "RelatedEntityName": "Revenues",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "6bcafc40-80bd-4608-b51d-1bc8f8d94c58": "Active Revenues",
+      "6dab94af-dad1-42de-b294-429e72b7b3be": "Revenue Advanced Find View",
+      "9e890401-2708-46fd-b90c-4ed9e961d87c": "Revenue Lookup View",
+      "dd2d136b-66dc-4493-bf46-4d97988c7662": "Revenue Associated View",
+      "fd9cbd3c-e3bd-4794-acd8-3f7916310583": "Inactive Revenues"
+    }
+  },
+  {
+    "DisplayName": "Status (Revenues)",
+    "Name": "tl_revenue_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Revenues"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Revenues",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Revenues)",
+    "Name": "tl_revenue_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Revenues"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Revenues",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Installments (Revenues)",
+    "Name": "tl_revenue_tl_installments",
+    "OptionSetInfoNameMapping": {
+      "1": "1st",
+      "2": "2nd",
+      "3": "3rd",
+      "4": "4th",
+      "5": "5th"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tl_installments",
+        "OptionSetReferenceEntityName": "Revenues"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tl_installments",
+    "RelatedEntityName": "Revenues",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Revenue Status (Revenues)",
+    "Name": "tl_revenue_tl_status",
+    "OptionSetInfoNameMapping": {
+      "1": "1. Plan",
+      "2": "2. Actual"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tl_status",
+        "OptionSetReferenceEntityName": "Revenues"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tl_status",
+    "RelatedEntityName": "Revenues",
+    "Type": "OptionSetInfo"
+  }
+]

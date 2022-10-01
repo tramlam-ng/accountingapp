@@ -1,0 +1,14 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |+
+        =Set(varGridEdit,false);
+        Set(UserName,User().FullName);
+        ClearCollect(colRevStatus,{Value:Blank()});
+        Collect(colRevStatus,Choices(Revenues.'Revenue Status'));
+        ClearCollect(colProjStatus,{Value:Blank()});
+        Collect(colProjStatus,Choices(Projects.'Project Status'));
+        
+        
+        
+    StartScreen: =
+

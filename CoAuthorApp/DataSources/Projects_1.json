@@ -1,0 +1,242 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "msdyn_projects",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "msdyn_project",
+    "MaxGetRowsCount": 500,
+    "Name": "Projects_1",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "msdyn_bulkgenerationstatus": "Bulk Generation Status",
+      "msdyn_businesscase": "Business case",
+      "msdyn_calendarid": "Calendar Id",
+      "msdyn_comments": "Comments",
+      "msdyn_ContractOrganizationalUnitId": "Contracting Unit",
+      "msdyn_copyprojectcorrelationid": "Copy Project Correlation Id",
+      "msdyn_copyprojectsessionid": "Copy Project Session Id",
+      "msdyn_description": "Description",
+      "msdyn_disablecreateofteammemberformanager": "Disable create of team member for project manager",
+      "msdyn_duration": "Duration (Days)",
+      "msdyn_effort": "Effort (Hours)",
+      "msdyn_effortcompleted": "Effort Completed (Hours)",
+      "msdyn_effortremaining": "Effort Remaining (Hours)",
+      "msdyn_finish": "Finish Date",
+      "msdyn_globalrevisiontoken": "Global Revision Token",
+      "msdyn_msdyn_project_msdyn_documentheader_project": "Document Headers",
+      "msdyn_msdyn_project_msdyn_operationset": "OperationSets",
+      "msdyn_msdyn_project_msdyn_projectbucket_project": "Project Buckets",
+      "msdyn_msdyn_project_msdyn_projectchange_Project": "Change",
+      "msdyn_msdyn_project_msdyn_projectissue_Project": "Issue",
+      "msdyn_msdyn_project_msdyn_projectlabel_Project": "Project Labels",
+      "msdyn_msdyn_project_msdyn_projectrequest_Project": "Project Request",
+      "msdyn_msdyn_project_msdyn_projectrisk_Project": "Risk",
+      "msdyn_msdyn_project_msdyn_projectsprint_project": "Project Sprints",
+      "msdyn_msdyn_project_msdyn_projectstatusreport_Project": "Status Report",
+      "msdyn_msdyn_project_msdyn_projecttask_project": "Project Tasks",
+      "msdyn_msdyn_project_msdyn_projecttaskdependency_Project": "Project Task Dependencies",
+      "msdyn_msdyn_project_msdyn_projectteam_project": "Project Team Members",
+      "msdyn_msdyn_project_msdyn_projectteamschannelmapping_Project": "Project Teams Channel Mappings",
+      "msdyn_msdyn_project_msdyn_psserrorlog": "PSS Error Logs",
+      "msdyn_msdyn_project_msdyn_replaylogsection_project": "Replay Log Sections",
+      "msdyn_msdyn_project_msdyn_resourceassignment_projectid": "Resource Assignments",
+      "msdyn_MSProjectDocument": "MS Project Document",
+      "msdyn_pfwcreatedby": "Project for the web CreatedBy",
+      "msdyn_pfwmodifiedby": "Project for the web ModifiedBy",
+      "msdyn_plannerlastsavedrevisiontoken": "Planner last Saved Revisiontoken",
+      "msdyn_plannerreplicationstate": "Planner Replication State",
+      "msdyn_Program": "Program",
+      "msdyn_progress": "% Complete",
+      "msdyn_project_Annotations": "Notes",
+      "msdyn_project_AsyncOperations": "System Jobs",
+      "msdyn_project_BulkDeleteFailures": "Bulk Delete Failures",
+      "msdyn_project_connections1": "Connections (msdyn_project_connections1)",
+      "msdyn_project_connections2": "Connections (msdyn_project_connections2)",
+      "msdyn_project_DuplicateBaseRecord": "Duplicate Records (msdyn_project_DuplicateBaseRecord)",
+      "msdyn_project_DuplicateMatchingRecord": "Duplicate Records (msdyn_project_DuplicateMatchingRecord)",
+      "msdyn_project_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "msdyn_project_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "msdyn_project_ProcessSession": "Process Sessions",
+      "msdyn_project_QueueItems": "Queue Items",
+      "msdyn_project_resourcerequirement": "Resource Requirements",
+      "msdyn_project_SharePointDocumentLocations": "Document Locations",
+      "msdyn_project_SyncErrors": "Sync Errors",
+      "msdyn_projectid": "Project",
+      "msdyn_projectimportstagingid_msdyn_projectimportstaging": "Import staging",
+      "msdyn_projectmanager": "Project manager",
+      "msdyn_scheduledstart": "Start Date",
+      "msdyn_schedulemode": "Schedule mode",
+      "msdyn_subject": "Name",
+      "msdyn_taskearlieststart": "Earliest Start Date",
+      "msdyn_teamschannelmappingbackfilled": "Teams Channel Mapping BackFilled",
+      "msdyn_valuestatement": "Value statement",
+      "msdyn_workhourtemplate": "Work hour template",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "processid": "Process Id",
+      "stageid": "Stage Id",
+      "statecode": "Project Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "traversedpath": "Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Projects_1",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Projects_1 (Views)",
+    "Name": "_msdyn_project_views",
+    "RelatedEntityName": "Projects_1",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1f441532-1e52-ea11-a81e-000d3a015cf2": "Copy Project Columns",
+      "4f49784e-7370-4441-b54e-bf7be616f312": "All Projects",
+      "5ffc1c17-efef-43f7-b9ef-c383fdc52470": "Project Associated View",
+      "a18e3a4a-429d-4a98-9466-f7aa7068b5c3": "My Active Projects",
+      "bde03271-faca-41b1-a0e8-95d1102059f6": "Closed Projects",
+      "c6646673-0205-4f29-a267-fdbf47b078b4": "Project Lookup View",
+      "dc64c75c-618b-4065-ad3c-68f513c8cc64": "Project Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Async Operation Status",
+    "Name": "msdyn_asyncoperationstatus",
+    "OptionSetInfoNameMapping": {
+      "192350000": "Processing",
+      "192350001": "Failed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "msdyn_bulkgenerationstatus",
+        "OptionSetReferenceEntityName": "Projects_1"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "msdyn_bulkgenerationstatus",
+    "RelatedEntityName": "Projects_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Disable create of team member for project manager (Projects_1)",
+    "Name": "msdyn_project_msdyn_disablecreateofteammemberformanager",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "msdyn_disablecreateofteammemberformanager",
+        "OptionSetReferenceEntityName": "Projects_1"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "msdyn_disablecreateofteammemberformanager",
+    "RelatedEntityName": "Projects_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Teams Channel Mapping BackFilled (Projects_1)",
+    "Name": "msdyn_project_msdyn_teamschannelmappingbackfilled",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "msdyn_teamschannelmappingbackfilled",
+        "OptionSetReferenceEntityName": "Projects_1"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "msdyn_teamschannelmappingbackfilled",
+    "RelatedEntityName": "Projects_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Project Status (Projects_1)",
+    "Name": "msdyn_project_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Projects_1"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Projects_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Projects_1)",
+    "Name": "msdyn_project_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "192350000": "Closed - Sets project to read only and cancels future bookings",
+      "192350001": "Project copying",
+      "192350002": "Project copy failed",
+      "192350011": "Project importing",
+      "192350012": "Project import failed",
+      "2": "Inactive - Sets project to read only"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Projects_1"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Projects_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Schedule Mode",
+    "Name": "msdyn_schedulemode",
+    "OptionSetInfoNameMapping": {
+      "192350000": "Fixed effort",
+      "192350001": "Fixed duration",
+      "192350002": "Fixed units"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "msdyn_schedulemode",
+        "OptionSetReferenceEntityName": "Projects_1"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "msdyn_schedulemode",
+    "RelatedEntityName": "Projects_1",
+    "Type": "OptionSetInfo"
+  }
+]
