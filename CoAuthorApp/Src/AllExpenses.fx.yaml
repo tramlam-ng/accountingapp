@@ -682,7 +682,7 @@ AllExpenses As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =11
-            Text: ="Back to All Expenses"
+            Text: ="Back to all expenses"
             Visible: =varPopUp2_3
             X: =489
             Y: =437
@@ -690,7 +690,7 @@ AllExpenses As screen:
 
         TextInput4_3 As text:
             BorderThickness: =0
-            Default: ="New project has been successfully created." 
+            Default: ="New expense has been successfully added."
             FontWeight: =FontWeight.Bold
             Height: =47
             Size: =14
@@ -706,7 +706,7 @@ AllExpenses As screen:
         Default: ="New Expense"
         DisplayMode: =DisplayMode.View
         FontWeight: =FontWeight.Bold
-        Visible: =varPopUpNewRev
+        Visible: =varPopUpNewEx
         Width: =162
         X: =908
         Y: =10
@@ -1393,8 +1393,8 @@ AllExpenses As screen:
             SnapToColumns: =false
             Visible: =varPopUpEditExpense
             Width: =516
-            X: =915
-            Y: =32
+            X: =513
+            Y: =84
             ZIndex: =58
 
             Name_DataCard3 As typedDataCard.textualEditCard:
@@ -1610,7 +1610,7 @@ AllExpenses As screen:
         formNewExpense As form:
             BorderColor: =RGBA(166, 166, 166, 1)
             DataSource: =Expenses
-            Height: =629
+            Height: =637
             SnapToColumns: =false
             Visible: =varPopUpNewEx
             Width: =524
@@ -1618,292 +1618,27 @@ AllExpenses As screen:
             Y: =36
             ZIndex: =40
 
-            "'Expense Note_DataCard1' As typedDataCard.textualMultiLineEditCard":
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_expensenote"
-                Default: =ThisItem.'Expense Note'
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensenote")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                Required: =false
-                Update: =DataCardValue29.Text
-                Width: =174
-                X: =1
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey29 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue29 As text:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    Default: =Parent.Default
-                    DelayOutput: =true
-                    DisplayMode: =Parent.DisplayMode
-                    Height: =80
-                    Mode: =TextMode.MultiLine
-                    PaddingLeft: =5
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Tooltip: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey29.Y + DataCardKey29.Height + 5
-                    ZIndex: =2
-
-                ErrorMessage26 As label:
-                    AutoHeight: =true
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardValue29.Y + DataCardValue29.Height
-                    ZIndex: =3
-
-                StarVisible26 As label:
-                    Align: =Align.Center
-                    Height: =DataCardKey29.Height
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    Y: =DataCardKey29.Y
-                    ZIndex: =4
-
-            "'Expense Status_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="cr886_expensestatus"
-                Default: =ThisItem.'Expense Status'
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"cr886_expensestatus")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                Required: =true
-                Update: =DataCardValue30.Selected.Value
-                Width: =174
-                X: =2
-                Y: =0
-                ZIndex: =1
-
-                DataCardKey30 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue30 As combobox:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    DefaultSelectedItems: =[Parent.Default]
-                    DisplayFields: =["Value"]
-                    DisplayMode: =Parent.DisplayMode
-                    IsSearchable: =false
-                    Items: =Choices('Expense Status')
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectMultiple: =false
-                    Tooltip: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey30.Y + DataCardKey30.Height + 5
-                    ZIndex: =2
-
-                ErrorMessage27 As label:
-                    AutoHeight: =true
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardValue30.Y + DataCardValue30.Height
-                    ZIndex: =3
-
-                StarVisible27 As label:
-                    Align: =Align.Center
-                    Height: =DataCardKey30.Height
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    Y: =DataCardKey30.Y
-                    ZIndex: =4
-
-            "'Expense Type_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_expensetype"
-                Default: =ThisItem.'Expense Type'
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensetype")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                Required: =false
-                Update: =DataCardValue31.Selected.Value
-                Width: =174
-                X: =0
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey31 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue31 As combobox:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    DefaultSelectedItems: =[Parent.Default]
-                    DisplayFields: =["Value"]
-                    DisplayMode: =Parent.DisplayMode
-                    IsSearchable: =false
-                    Items: =Choices('Expense Type (Expenses)')
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectMultiple: =false
-                    Tooltip: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey31.Y + DataCardKey31.Height + 5
-                    ZIndex: =2
-
-                ErrorMessage28 As label:
-                    AutoHeight: =true
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardValue31.Y + DataCardValue31.Height
-                    ZIndex: =3
-
-                StarVisible28 As label:
-                    Align: =Align.Center
-                    Height: =DataCardKey31.Height
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    Y: =DataCardKey31.Y
-                    ZIndex: =4
-
-            Planner_DataCard1 As typedDataCard.comboBoxEditCard:
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_Planner"
-                Default: =ThisItem.Planner
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_Planner")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                Required: =false
-                Update: =DataCardValue32.Selected
-                Width: =174
-                X: =1
-                Y: =1
-                ZIndex: =1
-
-                DataCardKey32 As label:
-                    AutoHeight: =true
-                    Height: =34
-                    Text: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    Wrap: =false
-                    X: =30
-                    Y: =10
-                    ZIndex: =1
-
-                DataCardValue32 As combobox:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    DefaultSelectedItems: =Parent.Default
-                    DisplayFields: =["displayname"]
-                    DisplayMode: =Parent.DisplayMode
-                    Items: =Choices([@Expenses].tl_Planner)
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SearchFields: =["displayname"]
-                    SearchItems: =Search(Choices([@Expenses].tl_Planner),DataCardValue32.SearchText,"displayname")
-                    SelectMultiple: =false
-                    Tooltip: =Parent.DisplayName
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardKey32.Y + DataCardKey32.Height + 5
-                    ZIndex: =2
-
-                ErrorMessage29 As label:
-                    AutoHeight: =true
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =30
-                    Y: =DataCardValue32.Y + DataCardValue32.Height
-                    ZIndex: =3
-
-                StarVisible29 As label:
-                    Align: =Align.Center
-                    Height: =DataCardKey32.Height
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    Y: =DataCardKey32.Y
-                    ZIndex: =4
-
             "'Project Name_DataCard2' As typedDataCard.comboBoxEditCard":
+                BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_ProjectName"
                 Default: =ThisItem.'Project Name'
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_ProjectName")
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
+                Height: =100
                 Required: =false
                 Update: =DataCardValue33.Selected
-                Width: =174
-                X: =2
-                Y: =1
+                Width: =524
+                X: =1
+                Y: =0
                 ZIndex: =1
 
                 DataCardKey33 As label:
                     AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
+                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -1912,14 +1647,23 @@ AllExpenses As screen:
                     ZIndex: =1
 
                 DataCardValue33 As combobox:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(116, 39, 116, 1)
+                    ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
                     DefaultSelectedItems: =Parent.Default
                     DisplayFields: =["tl_project"]
                     DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =2
+                    HoverBorderColor: =RGBA(116, 39, 116, 1)
+                    HoverFill: =White
+                    InputTextPlaceholder: =""
                     Items: =Choices([@Expenses].tl_ProjectName)
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedFill: =RGBA(116, 39, 116, 1)
                     SearchFields: =["tl_project"]
                     SearchItems: =Search(Choices([@Expenses].tl_ProjectName),DataCardValue33.SearchText,"tl_project")
+                    SelectionFill: =RGBA(116, 39, 116, 1)
                     SelectMultiple: =false
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
@@ -1952,6 +1696,240 @@ AllExpenses As screen:
                     Y: =DataCardKey33.Y
                     ZIndex: =4
 
+            "'Expense Type_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tl_expensetype"
+                Default: =ThisItem.'Expense Type'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensetype")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =100
+                Required: =false
+                Update: =DataCardValue31.Selected.Value
+                Width: =524
+                X: =2
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey31 As label:
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Size: =12
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue31 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(116, 39, 116, 1)
+                    ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =2
+                    HoverBorderColor: =RGBA(116, 39, 116, 1)
+                    HoverFill: =White
+                    IsSearchable: =false
+                    Items: =Choices('Expense Type (Expenses)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedFill: =RGBA(116, 39, 116, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =RGBA(116, 39, 116, 1)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey31.Y + DataCardKey31.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage28 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue31.Y + DataCardValue31.Height
+                    ZIndex: =3
+
+                StarVisible28 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey31.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey31.Y
+                    ZIndex: =4
+
+            "'Expense Status_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr886_expensestatus"
+                Default: =ThisItem.'Expense Status'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"cr886_expensestatus")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =100
+                Required: =true
+                Update: =DataCardValue30.Selected.Value
+                Width: =262
+                X: =3
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey30 As label:
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Size: =12
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue30 As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(116, 39, 116, 1)
+                    ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =2
+                    HoverColor: =RGBA(116, 39, 116, 1)
+                    HoverFill: =White
+                    IsSearchable: =false
+                    Items: =Choices('Expense Status')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedFill: =RGBA(116, 39, 116, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =Black
+                    SelectionTagColor: =Black
+                    SelectionTagFill: =Black
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey30.Y + DataCardKey30.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage27 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue30.Y + DataCardValue30.Height
+                    ZIndex: =3
+
+                StarVisible27 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey30.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey30.Y
+                    ZIndex: =4
+
+            Planner_DataCard1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tl_Planner"
+                Default: =ThisItem.Planner
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_Planner")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue32.Selected
+                Width: =262
+                X: =4
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey32 As label:
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Size: =12
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue32 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(116, 39, 116, 1)
+                    ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["displayname"]
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =2
+                    HoverBorderColor: =RGBA(116, 39, 116, 1)
+                    HoverColor: =RGBA(116, 39, 116, 1)
+                    HoverFill: =White
+                    InputTextPlaceholder: =""
+                    Items: =Choices([@Expenses].tl_Planner)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedFill: =RGBA(116, 39, 116, 1)
+                    SearchFields: =["displayname"]
+                    SearchItems: =Search(Choices([@Expenses].tl_Planner),DataCardValue32.SearchText,"displayname")
+                    SelectionFill: =RGBA(116, 39, 116, 1)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey32.Y + DataCardKey32.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage29 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue32.Y + DataCardValue32.Height
+                    ZIndex: =3
+
+                StarVisible29 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey32.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey32.Y
+                    ZIndex: =4
+
             "'Expected Payment Date_DataCard1' As typedDataCard.dateEditCard":
                 BorderStyle: =BorderStyle.Solid
                 DataField: ="tl_expectedpaymentdate"
@@ -1959,17 +1937,19 @@ AllExpenses As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expectedpaymentdate")
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
+                Height: =100
                 Required: =false
                 Update: =DataCardValue34.SelectedDate
-                Width: =174
-                X: =0
-                Y: =2
+                Width: =524
+                X: =5
+                Y: =0
                 ZIndex: =1
 
                 DataCardKey34 As label:
                     AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
+                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -1978,10 +1958,16 @@ AllExpenses As screen:
                     ZIndex: =1
 
                 DataCardValue34 As datepicker:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderColor: =If(IsBlank(Parent.Error), RGBA(166, 166, 166, 1), Color.Red)
+                    BorderThickness: =1
+                    Color: =RGBA(116, 39, 116, 1)
                     DefaultDate: =Parent.Default
                     DisplayMode: =Parent.DisplayMode
                     EndYear: =Year(Today())+100
+                    FocusedBorderThickness: =2
+                    Format: ="dd/mm/yyyy"
+                    IconBackground: =RGBA(116, 39, 116, 1)
+                    InputTextPlaceholder: =//If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
                     IsEditable: =true
                     PaddingBottom: =0
                     PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -2024,17 +2010,19 @@ AllExpenses As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expectedpaymentvalue")
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
+                Height: =100
                 Required: =false
                 Update: =Value(DataCardValue35.Text)
-                Width: =174
-                X: =1
-                Y: =2
+                Width: =524
+                X: =6
+                Y: =0
                 ZIndex: =1
 
                 DataCardKey35 As label:
                     AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
+                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -2043,11 +2031,15 @@ AllExpenses As screen:
                     ZIndex: =1
 
                 DataCardValue35 As text:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                    BorderThickness: =1
                     Default: =Parent.Default
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =2
                     Format: =TextFormat.Number
+                    HoverBorderColor: =RGBA(116, 39, 116, 1)
+                    HoverFill: =White
                     PaddingLeft: =5
                     RadiusBottomLeft: =0
                     RadiusBottomRight: =0
@@ -2084,25 +2076,26 @@ AllExpenses As screen:
                     Y: =DataCardKey35.Y
                     ZIndex: =4
 
-            Name_DataCard2 As typedDataCard.textualEditCard:
+            "'Expense Note_DataCard1' As typedDataCard.textualMultiLineEditCard":
                 BorderStyle: =BorderStyle.Solid
-                DataField: ="tl_name"
-                Default: =ThisItem.Name
+                DataField: ="tl_expensenote"
+                Default: =ThisItem.'Expense Note'
                 DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_name")
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensenote")
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "tl_name")
-                Required: =true
-                Update: =DataCardValue23.Text
-                Width: =174
-                X: =0
+                Height: =110
+                Required: =false
+                Update: =DataCardValue29.Text
+                Width: =524
+                X: =7
                 Y: =0
-                ZIndex: =41
+                ZIndex: =1
 
-                DataCardKey22 As label:
+                DataCardKey29 As label:
                     AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
+                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -2110,11 +2103,95 @@ AllExpenses As screen:
                     Y: =10
                     ZIndex: =1
 
-                DataCardValue23 As text:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DataCardValue29 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                    BorderThickness: =1
                     Default: =Parent.Default
                     DelayOutput: =true
                     DisplayMode: =Parent.DisplayMode
+                    FocusedBorderColor: =RGBA(116, 39, 116, 1)
+                    FocusedBorderThickness: =2
+                    Height: =67
+                    HoverBorderColor: =RGBA(116, 39, 116, 1)
+                    HoverColor: =RGBA(116, 39, 116, 1)
+                    HoverFill: =White
+                    Mode: =TextMode.MultiLine
+                    PaddingLeft: =5
+                    PressedColor: =RGBA(116, 39, 116, 1)
+                    PressedFill: =White
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey29.Y + DataCardKey29.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage26 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue29.Y + DataCardValue29.Height
+                    ZIndex: =3
+
+                StarVisible26 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey29.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey29.Y
+                    ZIndex: =4
+
+            Name_DataCard2 As typedDataCard.textualEditCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="tl_name"
+                Default: =ThisItem.Name
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =100
+                MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "tl_name")
+                Required: =true
+                Update: =DataCardValue23.Text
+                Width: =524
+                X: =0
+                Y: =0
+                ZIndex: =41
+
+                DataCardKey22 As label:
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    Size: =12
+                    Text: ="Expense Name"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue23 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), RGBA(116, 116, 116, 1), Color.Red)
+                    BorderThickness: =1
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =2
+                    HoverBorderColor: =RGBA(116, 39, 116, 1)
+                    HoverFill: =White
                     MaxLength: =Parent.MaxLength
                     PaddingLeft: =5
                     RadiusBottomLeft: =0
@@ -2155,15 +2232,13 @@ AllExpenses As screen:
         btnSaveViewDetail_8 As button:
             BorderThickness: =1
             DisplayMode: |
-                =If(!IsBlankOrError(DataCardValue21) && !IsBlankOrError(DataCardValue23) && !IsBlankOrError(DataCardValue26) && !IsBlankOrError(DataCardValue27) && !IsBlankOrError(DataCardValue28) && !IsBlankOrError(DataCardValue29) && !IsBlankOrError(DataCardValue30) && !IsBlankOrError(DataCardValue31),DisplayMode.Edit,DisplayMode.Disabled)
+                =If(!IsBlankOrError(DataCardValue23) && !IsBlankOrError(DataCardValue29) && !IsBlankOrError(DataCardValue33) && !IsBlankOrError(DataCardValue31) && !IsBlankOrError(DataCardValue30) && !IsBlankOrError(DataCardValue32) && !IsBlankOrError(DataCardValue34) && !IsBlankOrError(DataCardValue35),DisplayMode.Edit,DisplayMode.Disabled)
             Fill: =RGBA(116, 39, 116, 1)
             FontWeight: =FontWeight.Bold
             HoverFill: =ColorFade(RGBA(116, 39, 116, 1), -20%)
-            OnSelect: |-
+            OnSelect: |
                 =//Clear(colAttachsGallery); ForAll(galAttach.AllItems,Collect(colAttachsGallery,{Title:lblTitle.Text,DataStream:imgDataStream.Image}));ProjectsManagementFlow.Run(JSON(colAttachsGallery,JSONFormat.IncludeBinaryData),txtProjectName.Text);
-                //SubmitForm(formNewRevenue);NewForm(formNewRevenue);
                 Set(varPopUp2_3,true);SubmitForm(formNewExpense);
-                //NewForm(Form1)
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -2173,7 +2248,7 @@ AllExpenses As screen:
             Visible: =varPopUpNewEx
             Width: =150
             X: =1084
-            Y: =702
+            Y: =689
             ZIndex: =41
 
         Icon2_6 As icon.CancelBadge:
@@ -2202,4 +2277,628 @@ AllExpenses As screen:
         X: =80
         Y: =80
         ZIndex: =68
+
+    formNewExpense_1 As form:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        DataSource: =Expenses
+        Height: =637
+        Item: =galExpense.Selected
+        SnapToColumns: =false
+        Visible: =varPopUpEditExpense
+        Width: =524
+        X: =897
+        Y: =47
+        ZIndex: =69
+
+        "'Project Name_DataCard2_1' As typedDataCard.comboBoxEditCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="tl_ProjectName"
+            Default: =ThisItem.'Project Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_ProjectName")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Required: =false
+            Update: =DataCardValue33_1.Selected
+            Width: =524
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey33_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue33_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(116, 39, 116, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["tl_project"]
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =2
+                HoverBorderColor: =RGBA(116, 39, 116, 1)
+                HoverFill: =White
+                InputTextPlaceholder: =""
+                Items: =Choices([@Expenses].tl_ProjectName)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(116, 39, 116, 1)
+                SearchFields: =["tl_project"]
+                SearchItems: =Search(Choices([@Expenses].tl_ProjectName),DataCardValue33_1.SearchText,"tl_project")
+                SelectionFill: =RGBA(116, 39, 116, 1)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey33_1.Y + DataCardKey33_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage30_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue33_1.Y + DataCardValue33_1.Height
+                ZIndex: =3
+
+            StarVisible30_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey33_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey33_1.Y
+                ZIndex: =4
+
+        "'Expense Type_DataCard1_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="tl_expensetype"
+            Default: =ThisItem.'Expense Type'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensetype")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Required: =false
+            Update: =DataCardValue31_2.Selected.Value
+            Width: =524
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey31_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue31_2 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(116, 39, 116, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =2
+                HoverBorderColor: =RGBA(116, 39, 116, 1)
+                HoverFill: =White
+                IsSearchable: =false
+                Items: =Choices('Expense Type (Expenses)')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(116, 39, 116, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(116, 39, 116, 1)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey31_1.Y + DataCardKey31_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage28_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue31_2.Y + DataCardValue31_2.Height
+                ZIndex: =3
+
+            StarVisible28_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey31_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey31_1.Y
+                ZIndex: =4
+
+        "'Expense Status_DataCard1_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr886_expensestatus"
+            Default: =ThisItem.'Expense Status'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"cr886_expensestatus")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Required: =true
+            Update: =DataCardValue30_1.Selected.Value
+            Width: =262
+            X: =3
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey30_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue30_1 As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(116, 39, 116, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =2
+                HoverColor: =RGBA(116, 39, 116, 1)
+                HoverFill: =White
+                IsSearchable: =false
+                Items: =Choices('Expense Status')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(116, 39, 116, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(116, 39, 116, 1)
+                SelectionTagColor: =Black
+                SelectionTagFill: =White
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey30_1.Y + DataCardKey30_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage27_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue30_1.Y + DataCardValue30_1.Height
+                ZIndex: =3
+
+            StarVisible27_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey30_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey30_1.Y
+                ZIndex: =4
+
+        Planner_DataCard1_1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="tl_Planner"
+            Default: =ThisItem.Planner
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_Planner")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue32_1.Selected
+            Width: =262
+            X: =4
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey32_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue32_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(116, 39, 116, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["displayname"]
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =2
+                HoverBorderColor: =RGBA(116, 39, 116, 1)
+                HoverColor: =RGBA(116, 39, 116, 1)
+                HoverFill: =White
+                InputTextPlaceholder: =""
+                Items: =Choices([@Expenses].tl_Planner)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(116, 39, 116, 1)
+                SearchFields: =["displayname"]
+                SearchItems: =Search(Choices([@Expenses].tl_Planner),DataCardValue32_1.SearchText,"displayname")
+                SelectionFill: =RGBA(116, 39, 116, 1)
+                SelectionTagColor: =Black
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey32_1.Y + DataCardKey32_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage29_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue32_1.Y + DataCardValue32_1.Height
+                ZIndex: =3
+
+            StarVisible29_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey32_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey32_1.Y
+                ZIndex: =4
+
+        "'Expected Payment Date_DataCard1_1' As typedDataCard.dateEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="tl_expectedpaymentdate"
+            Default: =ThisItem.'Expected Payment Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expectedpaymentdate")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Required: =false
+            Update: =DataCardValue34_1.SelectedDate
+            Width: =524
+            X: =5
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey34_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue34_1 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), RGBA(166, 166, 166, 1), Color.Red)
+                BorderThickness: =1
+                Color: =RGBA(116, 39, 116, 1)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                FocusedBorderThickness: =2
+                Format: ="dd/mm/yyyy"
+                IconBackground: =RGBA(116, 39, 116, 1)
+                InputTextPlaceholder: =//If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey34_1.Y + DataCardKey34_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage31_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue34_1.Y + DataCardValue34_1.Height
+                ZIndex: =3
+
+            StarVisible31_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey34_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey34_1.Y
+                ZIndex: =4
+
+        "'Expected Payment Value_DataCard2_1' As typedDataCard.numberEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="tl_expectedpaymentvalue"
+            Default: =ThisItem.'Expected Payment Value'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expectedpaymentvalue")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Required: =false
+            Update: =Value(DataCardValue35_1.Text)
+            Width: =524
+            X: =6
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey35_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue35_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                BorderThickness: =1
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =2
+                Format: =TextFormat.Number
+                HoverBorderColor: =RGBA(116, 39, 116, 1)
+                HoverFill: =White
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey35_1.Y + DataCardKey35_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage33_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue35_1.Y + DataCardValue35_1.Height
+                ZIndex: =3
+
+            StarVisible33_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey35_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey35_1.Y
+                ZIndex: =4
+
+        "'Expense Note_DataCard1_1' As typedDataCard.textualMultiLineEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="tl_expensenote"
+            Default: =ThisItem.'Expense Note'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expensenote")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =110
+            Required: =false
+            Update: =DataCardValue29_1.Text
+            Width: =524
+            X: =7
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey29_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue29_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), RGBA(166,166,166,1), Color.Red)
+                BorderThickness: =1
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderColor: =RGBA(116, 39, 116, 1)
+                FocusedBorderThickness: =2
+                Height: =67
+                HoverBorderColor: =RGBA(116, 39, 116, 1)
+                HoverColor: =RGBA(116, 39, 116, 1)
+                HoverFill: =White
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                PressedColor: =RGBA(116, 39, 116, 1)
+                PressedFill: =White
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey29_1.Y + DataCardKey29_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage26_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue29_1.Y + DataCardValue29_1.Height
+                ZIndex: =3
+
+            StarVisible26_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey29_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey29_1.Y
+                ZIndex: =4
+
+        Name_DataCard2_1 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="tl_name"
+            Default: =ThisItem.Name
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "tl_name")
+            Required: =true
+            Update: =DataCardValue23_1.Text
+            Width: =524
+            X: =0
+            Y: =0
+            ZIndex: =41
+
+            DataCardKey22_1 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                Size: =12
+                Text: ="Expense Name"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue23_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), RGBA(116, 116, 116, 1), Color.Red)
+                BorderThickness: =1
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =2
+                HoverBorderColor: =RGBA(116, 39, 116, 1)
+                HoverFill: =White
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey22_1.Y + DataCardKey22_1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage23_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue23_1.Y + DataCardValue23_1.Height
+                ZIndex: =3
+
+            StarVisible23_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey22_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey22_1.Y
+                ZIndex: =4
 

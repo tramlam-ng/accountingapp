@@ -2954,7 +2954,9 @@ AllRevenues As screen:
 
                 DataCardKey8 As label:
                     AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
                     Height: =34
+                    Size: =12
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
