@@ -107,11 +107,11 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
+    "Screen1",
     "AllProjects",
     "Projectdetails",
     "AllRevenues",
     "AllExpenses",
-    "RevenueDetails",
-    "Screen1"
+    "RevenueDetails"
   ]
 }
