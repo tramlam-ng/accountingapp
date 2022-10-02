@@ -2702,7 +2702,7 @@ AllExpenses As screen:
         Fill: =RGBA(116, 39, 116, 1)
         FontWeight: =FontWeight.Bold
         HoverFill: =ColorFade(RGBA(116, 39, 116, 1), -20%)
-        OnSelect: =Set(varPopUpInvoice,true)   
+        OnSelect: =//Set(varPopUpInvoice,true)   
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
@@ -2714,52 +2714,4 @@ AllExpenses As screen:
         X: =1204
         Y: =689
         ZIndex: =67
-
-    grpPopUpInvoice As group:
-        Height: =5
-        Width: =5
-        X: =100
-        Y: =100
-        ZIndex: =76
-
-        rtgPopUp2_14 As rectangle:
-            Fill: =RGBA(240, 240, 240, 0.7)
-            Height: =767
-            Visible: =varPopUpInvoice
-            Width: =1440
-            ZIndex: =68
-
-        CameraExpense As camera:
-            Camera: =drpCameraExpense.Selected.Id
-            Height: =273
-            StreamRate: =100
-            Visible: =varPopUpInvoice
-            Width: =342
-            X: =73
-            Y: =110
-            ZIndex: =69
-
-        drpCameraExpense As dropdown:
-            Items: =CameraExpense.AvailableDevices
-            Visible: =varPopUpInvoice
-            X: =263
-            Y: =41
-            ZIndex: =70
-
-        Image2 As image:
-            Height: =263
-            Image: =varTakenPhoto
-            Visible: =varPopUpInvoice
-            Width: =331
-            X: =467
-            Y: =103
-            ZIndex: =71
-
-        Icon8 As icon.Cancel:
-            Icon: =Icon.CameraAperture
-            OnSelect: =Set(varTakenPhoto,CameraExpense.Stream)
-            Visible: =varPopUpInvoice
-            X: =661
-            Y: =36
-            ZIndex: =72
 

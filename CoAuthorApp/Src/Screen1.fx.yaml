@@ -118,11 +118,12 @@
         ZIndex: =11
 
     Image2_1 As image:
+        BorderThickness: =2
         Height: =263
         Image: =varTakenPhoto
         Width: =331
         X: =73
-        Y: =685
+        Y: =616
         ZIndex: =12
 
     Icon8_1 As icon.Cancel:
