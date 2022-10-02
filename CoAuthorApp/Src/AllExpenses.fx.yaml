@@ -2702,7 +2702,7 @@ AllExpenses As screen:
         Fill: =RGBA(116, 39, 116, 1)
         FontWeight: =FontWeight.Bold
         HoverFill: =ColorFade(RGBA(116, 39, 116, 1), -20%)
-        OnSelect: =//Set(varPopUpInvoice,true)   
+        OnSelect: =Navigate(Screen1)
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0

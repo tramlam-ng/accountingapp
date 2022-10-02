@@ -18,7 +18,13 @@
     CameraExpense As camera:
         Camera: =drpCameraExpense_1.Selected.Id
         Height: =486
-        OnSelect: =Collect(colExpensePhoto,Self.Photo)
+        OnSelect: |-
+            =//Collect(colExpensePhoto,Self.Photo)
+            Set(varImgName, GUID());
+            Collect(colExpImg, {
+                DisplayName: varImgName & ".jpg",
+                Id: varImgName & ".jpg",
+                Value: CameraExpense.Photo});
         StreamRate: =100
         Width: =794
         Y: =60
