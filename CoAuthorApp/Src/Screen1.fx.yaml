@@ -11,125 +11,47 @@
         Text: ="Print"
         Visible: =Not(Parent.Printing)
         Width: =96
-        X: =Parent.Width - Self.Width - 25
-        Y: =25
+        X: =90
+        Y: =9
         ZIndex: =2
 
-    CameraExpense_1 As camera:
+    CameraExpense As camera:
         Camera: =drpCameraExpense_1.Selected.Id
-        Height: =579
+        Height: =486
+        OnSelect: =Collect(colExpensePhoto,Self.Photo)
         StreamRate: =100
-        Width: =482
-        X: =140
-        Y: =57
+        Width: =794
+        Y: =60
         ZIndex: =10
-
-    Group4_4 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =20
-        ZIndex: =10
-
-        Rectangle6_4 As rectangle:
-            Fill: =RGBA(116, 39, 116, 1)
-            Height: =50
-            Width: =794
-            ZIndex: =3
-
-        Gallery2_4 As gallery.galleryHorizontal:
-            BorderStyle: =BorderStyle.None
-            Height: =50
-            Items: |
-                =Table({Tab:"DASHBOARD"},{Tab:"ALL PROJECTS"},{Tab:"ALL REVENUES"},{Tab:"ALL COSTS"})
-            TemplatePadding: =0.00
-            TemplateSize: =193.97
-            Width: =782.20
-            X: =11.799999999999955
-            ZIndex: =4
-
-            Button1_4 As button:
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =0
-                Fill: =RGBA(0, 0, 0, 0)
-                FocusedBorderThickness: =0
-                FontWeight: =FontWeight.Normal
-                Height: =50
-                HoverFill: =ColorFade(RGBA(116, 39, 116, 1),-20%)
-                OnSelect: =Switch(ThisItem.Tab,"ALL PROJECTS",Navigate(AllProjects),"ALL REVENUES",Navigate(AllRevenues),"ALL COSTS",Navigate(AllRevenues)) 
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0.00
-                PaddingTop: =0.00
-                PressedFill: =ColorFade(RGBA(116, 39, 116, 1),-20%)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =16.87
-                Text: =ThisItem.Tab
-                Width: =187.64
-                X: =6.33
-                ZIndex: =1
-
-        Rectangle2_24 As rectangle:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =45
-            Width: =2.11
-            X: =404.8
-            Y: =2
-            ZIndex: =5
-
-        Rectangle2_23 As rectangle:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =45
-            Width: =2.11
-            X: =595.61
-            Y: =2
-            ZIndex: =6
-
-        Rectangle2_22 As rectangle:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =45
-            Width: =2.11
-            X: =790.63
-            Y: =2
-            ZIndex: =7
-
-        Rectangle2_21 As rectangle:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =45
-            Width: =2.11
-            X: =791.89
-            Y: =2
-            ZIndex: =8
-
-        Rectangle2_20 As rectangle:
-            Fill: =RGBA(255, 255, 255, 1)
-            Height: =45
-            Width: =2.11
-            X: =791.89
-            ZIndex: =9
 
     drpCameraExpense_1 As dropdown:
-        Items: =CameraExpense_1.AvailableDevices
-        X: =432
-        Y: =728
+        Items: =CameraExpense.AvailableDevices
+        X: =417
+        Y: =9
         ZIndex: =11
 
-    Image2_1 As image:
-        BorderThickness: =2
-        Height: =263
-        Image: =varTakenPhoto
-        Width: =331
-        X: =73
-        Y: =616
-        ZIndex: =12
+    Gallery3 As gallery.galleryHorizontal:
+        Height: =445
+        Items: =colExpensePhoto
+        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(320, Self.Width - 60), Min(320, Self.Height - 60))
+        X: =77
+        Y: =610
+        ZIndex: =14
 
-    Icon8_1 As icon.Cancel:
-        Icon: =Icon.CameraAperture
-        OnSelect: =Set(varTakenPhoto,CameraExpense_1.Stream)
-        X: =432
-        Y: =784
-        ZIndex: =13
+        Image3 As image:
+            BorderThickness: =1
+            Height: =221
+            Image: =ThisItem.Url
+            OnSelect: =Select(Parent)
+            Width: =247
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+    Button9 As button:
+        OnSelect: =Clear(colExpensePhoto)
+        Text: ="Button"
+        X: =127
+        Y: =558
+        ZIndex: =15
 
