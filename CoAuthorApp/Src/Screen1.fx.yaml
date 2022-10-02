@@ -1,0 +1,138 @@
+"Screen1 As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =1123
+    Width: =794
+
+    PrintButton1 As label:
+        Align: =Align.Center
+        Height: =32
+        OnSelect: =Print()
+        Size: =13
+        TabIndex: =0
+        Text: ="Print"
+        Visible: =Not(Parent.Printing)
+        Width: =96
+        X: =Parent.Width - Self.Width - 25
+        Y: =25
+        ZIndex: =2
+
+    CameraExpense_1 As camera:
+        Camera: =drpCameraExpense_1.Selected.Id
+        Height: =273
+        StreamRate: =100
+        Visible: =varPopUpInvoice
+        Width: =342
+        X: =34
+        Y: =317
+        ZIndex: =10
+
+    Group4_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =10
+
+        Rectangle6_4 As rectangle:
+            Fill: =RGBA(116, 39, 116, 1)
+            Height: =50
+            Width: =794
+            ZIndex: =3
+
+        Gallery2_4 As gallery.galleryHorizontal:
+            BorderStyle: =BorderStyle.None
+            Height: =50
+            Items: |
+                =Table({Tab:"DASHBOARD"},{Tab:"ALL PROJECTS"},{Tab:"ALL REVENUES"},{Tab:"ALL COSTS"})
+            TemplatePadding: =0.00
+            TemplateSize: =193.97
+            Width: =782.20
+            X: =11.799999999999955
+            ZIndex: =4
+
+            Button1_4 As button:
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =0
+                FontWeight: =FontWeight.Normal
+                Height: =50
+                HoverFill: =ColorFade(RGBA(116, 39, 116, 1),-20%)
+                OnSelect: =Switch(ThisItem.Tab,"ALL PROJECTS",Navigate(AllProjects),"ALL REVENUES",Navigate(AllRevenues),"ALL COSTS",Navigate(AllRevenues)) 
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                PressedFill: =ColorFade(RGBA(116, 39, 116, 1),-20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =16.87
+                Text: =ThisItem.Tab
+                Width: =187.64
+                X: =6.33
+                ZIndex: =1
+
+        Rectangle2_24 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =45
+            Width: =2.11
+            X: =404.8
+            Y: =2
+            ZIndex: =5
+
+        Rectangle2_23 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =45
+            Width: =2.11
+            X: =595.61
+            Y: =2
+            ZIndex: =6
+
+        Rectangle2_22 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =45
+            Width: =2.11
+            X: =790.63
+            Y: =2
+            ZIndex: =7
+
+        Rectangle2_21 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =45
+            Width: =2.11
+            X: =791.89
+            Y: =2
+            ZIndex: =8
+
+        Rectangle2_20 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =45
+            Width: =2.11
+            X: =791.89
+            ZIndex: =9
+
+    drpCameraExpense_1 As dropdown:
+        Items: =CameraExpense_1.AvailableDevices
+        Visible: =varPopUpInvoice
+        X: =224
+        Y: =248
+        ZIndex: =11
+
+    Image2_1 As image:
+        Height: =263
+        Image: =varTakenPhoto
+        Visible: =varPopUpInvoice
+        Width: =331
+        X: =428
+        Y: =310
+        ZIndex: =12
+
+    Icon8_1 As icon.Cancel:
+        Icon: =Icon.CameraAperture
+        OnSelect: =Set(varTakenPhoto,CameraExpense_1.Stream)
+        Visible: =varPopUpInvoice
+        X: =622
+        Y: =243
+        ZIndex: =13
+

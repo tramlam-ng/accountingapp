@@ -1403,9 +1403,9 @@ AllExpenses As screen:
             Text: ="Save"
             Visible: =varPopUpEditExpense
             Width: =150
-            X: =1083
+            X: =1001
             Y: =689
-            ZIndex: =59
+            ZIndex: =58
 
         Icon2_8 As icon.CancelBadge:
             Color: =RGBA(0, 13, 75, 1)
@@ -1416,7 +1416,7 @@ AllExpenses As screen:
             Width: =40
             X: =1382
             Y: =10
-            ZIndex: =60
+            ZIndex: =59
 
     PopUp2_4 As group:
         Height: =5
@@ -1430,7 +1430,7 @@ AllExpenses As screen:
             Height: =768
             Visible: =varPopUp2_2
             Width: =1440
-            ZIndex: =62
+            ZIndex: =60
 
         rtgPopUp1_13 As rectangle:
             BorderColor: =RGBA(109, 49, 162, 1)
@@ -1440,7 +1440,7 @@ AllExpenses As screen:
             Width: =438
             X: =443
             Y: =227
-            ZIndex: =63
+            ZIndex: =61
 
         Button2_6 As button:
             Fill: =RGBA(149, 149, 149, 1)
@@ -1455,7 +1455,7 @@ AllExpenses As screen:
             Visible: =varPopUp2_2
             X: =587
             Y: =424
-            ZIndex: =65
+            ZIndex: =62
 
         TextInput4_4 As text:
             BorderThickness: =0
@@ -1467,7 +1467,7 @@ AllExpenses As screen:
             Width: =419
             X: =452
             Y: =303
-            ZIndex: =66
+            ZIndex: =63
 
     PopUpNewExpense As group:
         Height: =5
@@ -2152,7 +2152,7 @@ AllExpenses As screen:
         Visible: =varPopUpEditRev
         X: =40
         Y: =40
-        ZIndex: =67
+        ZIndex: =64
 
     Button6 As button:
         OnSelect: =Set(varPopUp2_3,true)
@@ -2160,7 +2160,7 @@ AllExpenses As screen:
         Visible: =varPopUpNewEx
         X: =80
         Y: =80
-        ZIndex: =68
+        ZIndex: =65
 
     formEditExpense As form:
         BorderColor: =RGBA(166, 166, 166, 1)
@@ -2172,7 +2172,7 @@ AllExpenses As screen:
         Width: =524
         X: =897
         Y: =47
-        ZIndex: =69
+        ZIndex: =66
 
         "'Project Name_DataCard2_1' As typedDataCard.comboBoxEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
@@ -2554,74 +2554,6 @@ AllExpenses As screen:
                 Y: =DataCardKey39.Y
                 ZIndex: =4
 
-        "'Expense Image_DataCard1' As typedDataCard.addLargePictureCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="tl_expenseimage"
-            Default: =ThisItem.'Expense Image'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Expenses],DataSourceInfo.DisplayName,"tl_expenseimage")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =Image1.Image
-            Width: =174
-            X: =1
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey40 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            Image1 As image:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                DisplayMode: =Parent.DisplayMode
-                Height: =AddPicture1.Height
-                Image: =If(IsBlank(AddPicture1.Media), Parent.Default, AddPicture1.Media)
-                Tooltip: =Parent.DisplayName
-                Width: =AddPicture1.Width
-                X: =AddPicture1.X
-                Y: =AddPicture1.Y
-                ZIndex: =2
-
-            AddPicture1 As addMedia:
-                Height: =200
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey40.Y + DataCardKey40.Height + 5
-                ZIndex: =3
-
-            ErrorMessage36 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =Image1.Y + Image1.Height
-                ZIndex: =4
-
-            StarVisible36 As label:
-                Align: =Align.Center
-                Height: =DataCardKey40.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey40.Y
-                ZIndex: =5
-
         "'Actual Payment Date_DataCard3' As typedDataCard.dateEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="tl_actualpaymentdate"
@@ -2762,33 +2694,72 @@ AllExpenses As screen:
                 Y: =DataCardKey22_1.Y
                 ZIndex: =4
 
-    CameraExpense As camera:
-        Camera: =drpCameraExpense.Selected.Id
-        Height: =273
-        StreamRate: =100
-        Width: =342
-        X: =73
-        Y: =110
-        ZIndex: =70
+    btnAddInvoice As button:
+        BorderThickness: =1
+        DisplayMode: |-
+            =//If(!IsBlankOrError(DataCardValue6_1) && !IsBlankOrError(DataCardValue15_1) && !IsBlankOrError(DataCardValue17_1) && !IsBlankOrError(DataCardValue8_1) && !IsBlankOrError(DataCardValue18_1) && !IsBlankOrError(DataCardValue19_1) && !IsBlankOrError(DataCardValue16_1),DisplayMode.Edit,DisplayMode.Disabled)
+            //If(!IsBlankOrError(DataCardValue21) && !IsBlankOrError(DataCardValue23) && !IsBlankOrError(DataCardValue24) && !IsBlankOrError(DataCardValue25) && !IsBlankOrError(DataCardValue26) && !IsBlankOrError(DataCardValue27) && !IsBlankOrError(DataCardValue28),DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(116, 39, 116, 1)
+        FontWeight: =FontWeight.Bold
+        HoverFill: =ColorFade(RGBA(116, 39, 116, 1), -20%)
+        OnSelect: =Set(varPopUpInvoice,true)   
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Add invoice photo"
+        Visible: =varPopUpEditExpense
+        Width: =150
+        X: =1204
+        Y: =689
+        ZIndex: =67
 
-    drpCameraExpense As dropdown:
-        Items: =CameraExpense.AvailableDevices
-        X: =216
-        Y: =439
-        ZIndex: =71
+    grpPopUpInvoice As group:
+        Height: =5
+        Width: =5
+        X: =100
+        Y: =100
+        ZIndex: =76
 
-    Image2 As image:
-        Height: =263
-        Image: =varTakenPhoto
-        Width: =331
-        X: =507
-        Y: =120
-        ZIndex: =72
+        rtgPopUp2_14 As rectangle:
+            Fill: =RGBA(240, 240, 240, 0.7)
+            Height: =767
+            Visible: =varPopUpInvoice
+            Width: =1440
+            ZIndex: =68
 
-    Icon8 As icon.Cancel:
-        Icon: =Icon.CameraAperture
-        OnSelect: =Set(varTakenPhoto,CameraExpense.Stream)
-        X: =641
-        Y: =425
-        ZIndex: =73
+        CameraExpense As camera:
+            Camera: =drpCameraExpense.Selected.Id
+            Height: =273
+            StreamRate: =100
+            Visible: =varPopUpInvoice
+            Width: =342
+            X: =73
+            Y: =110
+            ZIndex: =69
+
+        drpCameraExpense As dropdown:
+            Items: =CameraExpense.AvailableDevices
+            Visible: =varPopUpInvoice
+            X: =263
+            Y: =41
+            ZIndex: =70
+
+        Image2 As image:
+            Height: =263
+            Image: =varTakenPhoto
+            Visible: =varPopUpInvoice
+            Width: =331
+            X: =467
+            Y: =103
+            ZIndex: =71
+
+        Icon8 As icon.Cancel:
+            Icon: =Icon.CameraAperture
+            OnSelect: =Set(varTakenPhoto,CameraExpense.Stream)
+            Visible: =varPopUpInvoice
+            X: =661
+            Y: =36
+            ZIndex: =72
 
