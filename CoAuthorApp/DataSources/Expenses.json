@@ -12,6 +12,7 @@
       "_ownerid_value": "Owner",
       "{Attachments}": "Attachments",
       "cr886_actualpaymentvalue": "Actual Payment Value",
+      "cr886_expenseactualnote": "Expense Actual Note",
       "cr886_expensestatus": "Expense Status",
       "createdby": "Created By",
       "createdon": "Created On",

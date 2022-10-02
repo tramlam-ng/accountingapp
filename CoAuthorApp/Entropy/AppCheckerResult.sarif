@@ -7485,19 +7485,109 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.Name_DataCard2_1.DataCardValue23_1.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.Icon8.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.Name_DataCard2_1.DataCardValue23_1.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.Icon8.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "AllExpenses",
+                "type": "AllExpenses.Icon8"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "AllExpenses.Icon8.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "AllExpenses.Icon8.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.Name_DataCard2_1.DataCardValue23_1"
+                "type": "AllExpenses.Icon8"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "AllExpenses.drpCameraExpense.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "AllExpenses.drpCameraExpense.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "AllExpenses",
+                "type": "AllExpenses.drpCameraExpense"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.Name_DataCard2_1.DataCardValue23_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.Name_DataCard2_1.DataCardValue23_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "AllExpenses",
+                "type": "AllExpenses.formEditExpense.Name_DataCard2_1.DataCardValue23_1"
               }
             }
           ],
@@ -7695,19 +7785,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expense Note_DataCard1_1'.DataCardValue29_1.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Actual Payment Date_DataCard3'.DataCardValue40.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expense Note_DataCard1_1'.DataCardValue29_1.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Actual Payment Date_DataCard3'.DataCardValue40.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.'Expense Note_DataCard1_1'.DataCardValue29_1"
+                "type": "AllExpenses.formEditExpense.'Actual Payment Date_DataCard3'.DataCardValue40"
               }
             }
           ],
@@ -7725,19 +7815,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expected Payment Value_DataCard2_1'.DataCardValue35_1.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Actual Payment Value_DataCard2'.DataCardValue39.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expected Payment Value_DataCard2_1'.DataCardValue35_1.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Actual Payment Value_DataCard2'.DataCardValue39.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.'Expected Payment Value_DataCard2_1'.DataCardValue35_1"
+                "type": "AllExpenses.formEditExpense.'Actual Payment Value_DataCard2'.DataCardValue39"
               }
             }
           ],
@@ -7755,19 +7845,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expected Payment Date_DataCard1_1'.DataCardValue34_1.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Expense Image_DataCard1'.AddPicture1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expected Payment Date_DataCard1_1'.DataCardValue34_1.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Expense Image_DataCard1'.AddPicture1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.'Expected Payment Date_DataCard1_1'.DataCardValue34_1"
+                "type": "AllExpenses.formEditExpense.'Expense Image_DataCard1'.AddPicture1"
               }
             }
           ],
@@ -7785,19 +7875,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.Planner_DataCard1_1.DataCardValue32_1.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.Planner_DataCard1_1.DataCardValue32_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.Planner_DataCard1_1.DataCardValue32_1.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.Planner_DataCard1_1.DataCardValue32_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.Planner_DataCard1_1.DataCardValue32_1"
+                "type": "AllExpenses.formEditExpense.Planner_DataCard1_1.DataCardValue32_1"
               }
             }
           ],
@@ -7815,19 +7905,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expense Status_DataCard1_1'.DataCardValue30_1.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Expense Status_DataCard1_1'.DataCardValue30_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expense Status_DataCard1_1'.DataCardValue30_1.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Expense Status_DataCard1_1'.DataCardValue30_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.'Expense Status_DataCard1_1'.DataCardValue30_1"
+                "type": "AllExpenses.formEditExpense.'Expense Status_DataCard1_1'.DataCardValue30_1"
               }
             }
           ],
@@ -7845,19 +7935,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expense Type_DataCard1_1'.DataCardValue31_2.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Expense Type_DataCard1_1'.DataCardValue31_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Expense Type_DataCard1_1'.DataCardValue31_2.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Expense Type_DataCard1_1'.DataCardValue31_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.'Expense Type_DataCard1_1'.DataCardValue31_2"
+                "type": "AllExpenses.formEditExpense.'Expense Type_DataCard1_1'.DataCardValue31_2"
               }
             }
           ],
@@ -7875,19 +7965,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Project Name_DataCard2_1'.DataCardValue33_1.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Project Name_DataCard2_1'.DataCardValue33_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formNewExpense_1.'Project Name_DataCard2_1'.DataCardValue33_1.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.formEditExpense.'Project Name_DataCard2_1'.DataCardValue33_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formNewExpense_1.'Project Name_DataCard2_1'.DataCardValue33_1"
+                "type": "AllExpenses.formEditExpense.'Project Name_DataCard2_1'.DataCardValue33_1"
               }
             }
           ],
@@ -7905,19 +7995,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "AllExpenses.formEditExpense.Name_DataCard3.DataCardValue25.AccessibleLabel"
+                  "fullyQualifiedName": "AllExpenses.CameraExpense.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "AllExpenses.formEditExpense.Name_DataCard3.DataCardValue25.AccessibleLabel",
+                  "fullyQualifiedName": "AllExpenses.CameraExpense.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "AllExpenses",
-                "type": "AllExpenses.formEditExpense.Name_DataCard3.DataCardValue25"
+                "type": "AllExpenses.CameraExpense"
               }
             }
           ],

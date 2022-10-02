@@ -2173,7 +2173,7 @@ AllRevenues As screen:
                 DisplayMode: =If(!IsBlankOrError(DataCardValue8_2),DisplayMode.Disabled, Edit)
                 DisplayName: =DataSourceInfo([@Revenues],DataSourceInfo.DisplayName,"tl_expectedpaymentvalue")
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
+                Height: =86
                 Required: =false
                 Update: =Value(DataCardValue8_2.Text)
                 Width: =516
@@ -2210,7 +2210,7 @@ AllRevenues As screen:
                     Tooltip: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     X: =30
-                    Y: =49
+                    Y: =39
                     ZIndex: =2
 
                 ErrorMessage13_2 As label:
