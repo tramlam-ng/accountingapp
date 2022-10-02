@@ -1287,6 +1287,13 @@ AllProjects As screen:
         Y: =716
         ZIndex: =39
 
+    Button7 As button:
+        OnSelect: =Navigate(Screen1)
+        Text: ="Button"
+        X: =60
+        Y: =60
+        ZIndex: =40
+
     Group4_1 As group:
         Height: =5
         Width: =5
