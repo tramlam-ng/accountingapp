@@ -251,7 +251,7 @@ AllRevenues As screen:
             Fill: =RGBA(0, 0, 0, 0)
             OnSelect: |-
                 =//Select(Parent)
-                Set(varItemRev,ThisItem)
+                //Set(varItemRev,ThisItem)
             PaddingRight: =5.27
             PaddingTop: =5.27
             Size: =11
@@ -924,7 +924,7 @@ AllRevenues As screen:
         formNewRevenue_1 As form:
             DataSource: =Revenues
             Height: =629
-            Item: =varItemRev
+            Item: =varItemRev2
             SnapToColumns: =false
             Visible: =varPopUpCalDetails
             Width: =516
@@ -1677,37 +1677,6 @@ AllRevenues As screen:
                 Wrap: =false
                 ZIndex: =3
 
-            Gallery4 As gallery.galleryHorizontal:
-                Height: =48
-                Items: |-
-                    =//'Revenue Status' = (drpRevStatus.Selected.Value)
-                    Filter(
-                        Revenues,
-                        'Expected Date' = DateAdd(
-                            _firstDayInView,
-                            ThisItem.Value,
-                            Days
-                        ), IsBlank(galRevStatusBar.Selected.Value) || 'Revenue Status' = galRevStatusBar.Selected.Value)
-                TemplateSize: =191
-                Visible: |
-                    =false
-                Width: =201
-                Y: =41
-                ZIndex: =4
-
-                Button7 As button:
-                    Fill: =Switch(Text(ThisItem.'Revenue Status'), "1. Plan",GoldenRod,"2. Approved",MediumSeaGreen,"3. Actual",LightSkyBlue,"4. Rejected",FireBrick )
-                    Height: =22
-                    OnSelect: =Set(varItemRev,ThisItem);Set(varPopUpNewRev,true)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Text: =ThisItem.'Revenue Name'
-                    Width: =191
-                    Y: =44
-                    ZIndex: =1
-
             Gallery7 As gallery.galleryVertical:
                 Height: =77
                 Items: |-
@@ -1731,7 +1700,7 @@ AllRevenues As screen:
                     Fill: =Switch(Text(ThisItem.'Revenue Status'), "1. Plan",GoldenRod,"2. Actual",MediumSeaGreen,"3. Actual",LightSkyBlue,"4. Rejected",FireBrick )
                     Height: =22
                     OnSelect: |-
-                        =Set(varItemRev,ThisItem);Set(varPopUpCalDetails,true);ViewForm(formNewRevenue_1); UpdateContext({mytext:"Edit"})
+                        =Set(varItemRev2,ThisItem); Set(varPopUpCalDetails,true);ViewForm(formNewRevenue_1); UpdateContext({mytext:"Edit"})
                     RadiusBottomLeft: =0
                     RadiusBottomRight: =0
                     RadiusTopLeft: =0
@@ -2594,7 +2563,6 @@ AllRevenues As screen:
         formNewRevenue As form:
             DataSource: =Revenues
             Height: =629
-            Item: =varItemRev
             SnapToColumns: =false
             Visible: =varPopUpNewRev
             Width: =516
