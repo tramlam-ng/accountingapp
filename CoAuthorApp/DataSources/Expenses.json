@@ -59,7 +59,6 @@
       "tl_expenseid": "Expense",
       "tl_expenseimage": "Expense Image",
       "tl_expenseimageid": "tl_ExpenseImageId",
-      "tl_expensename": "Expense Name",
       "tl_expensenote": "Expense Note",
       "tl_expensetype": "Expense Type",
       "tl_name": "Name",

@@ -855,7 +855,7 @@ Projectdetails As screen:
 
         TextInput2_33 As text:
             BorderThickness: =0
-            Default: =ThisItem.'Expense Name'
+            Default: =ThisItem.tl_expensename
             Height: =29
             OnSelect: =Select(Parent)
             Size: =11
