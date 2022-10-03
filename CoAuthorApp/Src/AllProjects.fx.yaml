@@ -214,11 +214,12 @@ AllProjects As screen:
             =//Filter(Projects, txtSearchProject.Text in Project)
             //colGridData
             Sort(Filter(Projects, IsBlank(galProjectStatusBar.Selected.Value) || 'Project Status' = galProjectStatusBar.Selected.Value, txtSearchProject.Text in Project, IsBlank(cbClient.SelectedItems) || IsEmpty(cbClient.SelectedItems) || cbClient.Selected.Client in Project),'Created On',Ascending)
+            //SortByColumns(AddColumn(Filter(Projects, IsBlank(galProjectStatusBar.Selected.Value) || 'Project Status' = galProjectStatusBar.Selected.Value, txtSearchProject.Text in Project, IsBlank(cbClient.SelectedItems) || IsEmpty(cbClient.SelectedItems) || cbClient.Selected.Client in Project),Projects.'Project Status',Text(Projects.'Project Status'),'Project Status',Ascending)
         Layout: =Layout.Vertical
         ShowNavigation: =true
         ShowScrollbar: =false
         TemplatePadding: =0
-        TemplateSize: =40
+        TemplateSize: =38
         Width: =1397
         X: =18
         Y: =153
@@ -437,6 +438,17 @@ AllProjects As screen:
             X: =1308
             Y: =12
             ZIndex: =14
+
+        Dropdown2 As dropdown:
+            Default: =ThisItem.'Project Status'
+            Fill: =Switch(Text(ThisItem.'Project Status'), "1. Contract",LightSkyBlue,"2. Execution",Salmon,"3. Liquidation",LightGreen,GoldenRod)
+            Height: =38
+            Items: =Choices(ThisItem.'Project Status') 
+            OnChange: |-
+                =Patch(Projects,ThisItem,{'Project Status':Dropdown2.Selected.Value}) 
+            OnSelect: =Select(Parent)
+            X: =40
+            ZIndex: =15
 
     Group2 As group:
         Height: =5
