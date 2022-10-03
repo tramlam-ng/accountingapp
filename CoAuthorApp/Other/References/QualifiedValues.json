@@ -2,42 +2,6 @@
   "QualifiedValues": [
     {
       "Kind": "default.cds_tl_projects_forms",
-      "Namespace": "Projects (Biểu mẫu)",
-      "Values": {
-        "Information": "84b06a7a-a183-421b-8e48-ad4536b7cb9b"
-      }
-    },
-    {
-      "Kind": "default.cds_aaduser_forms",
-      "Namespace": "AAD Users (Biểu mẫu)",
-      "Values": {
-        "Information": "dd5ded01-9aad-4e25-8d0e-e9acdaecbe4e"
-      }
-    },
-    {
-      "Kind": "default.cds_tl_revenue_forms",
-      "Namespace": "Revenues (Biểu mẫu)",
-      "Values": {
-        "Information": "e47c89ae-9209-4643-b6b1-eb5285414ba9"
-      }
-    },
-    {
-      "Kind": "default.cds_msdyn_project_forms",
-      "Namespace": "Projects_1 (Biểu mẫu)",
-      "Values": {
-        "Import From Project ": "a38df5d5-7ec8-eb11-bacc-000d3a3239c9",
-        "Information": "105ef076-a72a-4382-bde5-35e3c3d9db40"
-      }
-    },
-    {
-      "Kind": "default.cds_tl_expense_forms",
-      "Namespace": "Expenses (Biểu mẫu)",
-      "Values": {
-        "Information": "6f236a8d-0e25-417b-adba-7812fed0c323"
-      }
-    },
-    {
-      "Kind": "default.cds_tl_projects_forms",
       "Namespace": "Projects (Forms)",
       "Values": {
         "Information": "84b06a7a-a183-421b-8e48-ad4536b7cb9b"
