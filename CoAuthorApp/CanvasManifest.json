@@ -104,7 +104,7 @@
     "PublishDataLocally": false,
     "PublishResourcesLocally": false,
     "PublishTarget": "player",
-    "UserLocale": "en-US"
+    "UserLocale": "vi-VN"
   },
   "ScreenOrder": [
     "Screen1",
@@ -112,6 +112,7 @@
     "Projectdetails",
     "AllRevenues",
     "AllExpenses",
-    "RevenueDetails"
+    "RevenueDetails",
+    "Screen2"
   ]
 }

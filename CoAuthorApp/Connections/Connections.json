@@ -112,7 +112,9 @@
       "parameterHintsV2": {}
     },
     "datasets": {},
-    "dataSources": [],
+    "dataSources": [
+      "Documents"
+    ],
     "dependencies": {},
     "dependents": [
       "ccd9b5b9-2399-467a-bb4d-96b39a0069da"

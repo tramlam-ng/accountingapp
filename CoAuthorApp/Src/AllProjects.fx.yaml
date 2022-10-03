@@ -14,11 +14,11 @@ AllProjects As screen:
     ComboBox1_4 As combobox:
         BorderColor: =RGBA(166, 166, 166, 1)
         BorderThickness: =1
+        Color: =RGBA(51, 51, 51, 1)
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(123, 123, 123, 1)
         ChevronHoverBackground: =RGBA(0, 0, 0, 0)
         ChevronHoverFill: =RGBA(51, 51, 51, 1)
-        Color: =RGBA(51, 51, 51, 1)
         DisplayFields: =["displayname"]
         FocusedBorderColor: =RGBA(164, 164, 164, 1)
         Height: =30
@@ -135,11 +135,11 @@ AllProjects As screen:
     cbClient As combobox:
         BorderColor: =RGBA(166, 166, 166, 1)
         BorderThickness: =1
+        Color: =RGBA(51, 51, 51, 1)
         ChevronBackground: =RGBA(255, 255, 255, 1)
         ChevronFill: =RGBA(123, 123, 123, 1)
         ChevronHoverBackground: =RGBA(0, 0, 0, 0)
         ChevronHoverFill: =RGBA(51, 51, 51, 1)
-        Color: =RGBA(51, 51, 51, 1)
         DisplayFields: =["tl_client"]
         FocusedBorderColor: =RGBA(164, 164, 164, 1)
         Height: =30
@@ -768,11 +768,11 @@ AllProjects As screen:
                 DataCardValue4 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
                     ChevronBackground: =RGBA(255, 255, 255, 1)
                     ChevronFill: =RGBA(123, 123, 123, 1)
                     ChevronHoverBackground: =RGBA(0, 0, 0, 0)
                     ChevronHoverFill: =RGBA(51, 51, 51, 1)
-                    Color: =RGBA(51, 51, 51, 1)
                     DefaultSelectedItems: =Parent.Default
                     DisplayFields: =["displayname"]
                     DisplayMode: =Parent.DisplayMode
@@ -853,11 +853,11 @@ AllProjects As screen:
                 DataCardValue2 As combobox:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
                     ChevronBackground: =RGBA(255, 255, 255, 1)
                     ChevronFill: =RGBA(123, 123, 123, 1)
                     ChevronHoverBackground: =RGBA(0, 0, 0, 0)
                     ChevronHoverFill: =RGBA(51, 51, 51, 1)
-                    Color: =RGBA(51, 51, 51, 1)
                     DefaultSelectedItems: =[Parent.Default]
                     DisplayFields: =["Value"]
                     DisplayMode: =Parent.DisplayMode

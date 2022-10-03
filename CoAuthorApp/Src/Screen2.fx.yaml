@@ -1,0 +1,8 @@
+Screen2 As screen:
+
+    Button11 As button:
+        Text: ="Helo helooo"
+        X: =360
+        Y: =270
+        ZIndex: =1
+

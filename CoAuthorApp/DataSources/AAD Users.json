@@ -44,8 +44,8 @@
     "DisplayName": "AAD Users (Views)",
     "Name": "_aaduser_views",
     "RelatedEntityName": "AAD Users",
-    "TrimmedViewName": true,
     "Type": "ViewInfo",
+    "TrimmedViewName": true,
     "ViewInfoNameMapping": {
       "1f1810e2-2903-402f-92bc-db11ec075c24": "All AAD users",
       "37ced142-2ece-4621-94f0-f5c3398ee4e8": "AAD User Lookup View",

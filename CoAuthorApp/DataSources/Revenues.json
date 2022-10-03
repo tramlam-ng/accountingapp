@@ -56,8 +56,8 @@
     "DisplayName": "Revenues (Views)",
     "Name": "_tl_revenue_views",
     "RelatedEntityName": "Revenues",
-    "TrimmedViewName": true,
     "Type": "ViewInfo",
+    "TrimmedViewName": true,
     "ViewInfoNameMapping": {
       "6bcafc40-80bd-4608-b51d-1bc8f8d94c58": "Active Revenues",
       "6dab94af-dad1-42de-b294-429e72b7b3be": "Revenue Advanced Find View",
