@@ -447,7 +447,7 @@ AllProjects As screen:
             OnChange: |-
                 =Patch(Projects,ThisItem,{'Project Status':Dropdown2.Selected.Value}) 
             OnSelect: =Select(Parent)
-            X: =40
+            X: =466
             ZIndex: =15
 
     Group2 As group:
