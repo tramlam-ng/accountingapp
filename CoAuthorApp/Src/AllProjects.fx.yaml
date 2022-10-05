@@ -219,8 +219,8 @@ AllProjects As screen:
         ShowNavigation: =true
         ShowScrollbar: =false
         TemplatePadding: =0
-        TemplateSize: =38
-        Width: =1397
+        TemplateSize: =39
+        Width: =1399
         X: =18
         Y: =153
         ZIndex: =17
@@ -263,24 +263,6 @@ AllProjects As screen:
             Width: =200
             X: =499
             ZIndex: =3
-
-        TextInput2_3 As text:
-            BorderThickness: =0
-            Default: =ThisItem.'Project Status'
-            DisplayMode: =DisplayMode.View
-            Fill: =Switch(Text(ThisItem.'Project Status'), "1. Contract",LightSkyBlue,"2. Execution",Salmon,"3. Liquidation",LightGreen,GoldenRod)
-            Height: =35
-            OnSelect: =Select(Parent)
-            PaddingRight: =5.27
-            PaddingTop: =5.27
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Size: =11
-            Width: =170
-            X: =706
-            ZIndex: =4
 
         TextInput2_4 As text:
             BorderThickness: =0
@@ -440,14 +422,19 @@ AllProjects As screen:
             ZIndex: =14
 
         Dropdown2 As dropdown:
+            BorderColor: =RGBA(237, 237, 237, 1)
+            ChevronBackground: =RGBA(255, 255, 255, 1)
+            ChevronFill: =RGBA(116, 116, 116, 1)
             Default: =ThisItem.'Project Status'
             Fill: =Switch(Text(ThisItem.'Project Status'), "1. Contract",LightSkyBlue,"2. Execution",Salmon,"3. Liquidation",LightGreen,GoldenRod)
-            Height: =38
+            Height: =37
             Items: =Choices(ThisItem.'Project Status') 
             OnChange: |-
                 =Patch(Projects,ThisItem,{'Project Status':Dropdown2.Selected.Value}) 
             OnSelect: =Select(Parent)
-            X: =466
+            Width: =170
+            X: =706
+            Y: =2
             ZIndex: =15
 
     Group2 As group:
