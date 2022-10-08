@@ -51,7 +51,7 @@
         "Name": "Rectangle6",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 661,
+        "PublishOrderIndex": 658,
         "Rules": [
           {
             "Category": "Design",
@@ -182,7 +182,7 @@
             "Name": "galleryTemplate2",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 663,
+            "PublishOrderIndex": 660,
             "Rules": [
               {
                 "Category": "Design",
@@ -405,7 +405,7 @@
             "Name": "Button1",
             "Parent": "Gallery2",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 664,
+            "PublishOrderIndex": 661,
             "Rules": [
               {
                 "Category": "Data",
@@ -731,7 +731,7 @@
         "Name": "Gallery2",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 662,
+        "PublishOrderIndex": 659,
         "Rules": [
           {
             "Category": "Data",
@@ -956,7 +956,7 @@
         "Name": "Rectangle2_4",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 665,
+        "PublishOrderIndex": 662,
         "Rules": [
           {
             "Category": "Design",
@@ -1126,7 +1126,7 @@
         "Name": "Rectangle2",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 666,
+        "PublishOrderIndex": 663,
         "Rules": [
           {
             "Category": "Design",
@@ -1303,7 +1303,7 @@
         "Name": "Rectangle2_1",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 667,
+        "PublishOrderIndex": 664,
         "Rules": [
           {
             "Category": "Design",
@@ -1473,7 +1473,7 @@
         "Name": "Rectangle2_2",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 668,
+        "PublishOrderIndex": 665,
         "Rules": [
           {
             "Category": "Design",
@@ -1650,7 +1650,7 @@
         "Name": "Rectangle2_3",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 669,
+        "PublishOrderIndex": 666,
         "Rules": [
           {
             "Category": "Design",
@@ -1791,7 +1791,7 @@
         "Name": "Group4",
         "Parent": "header",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 670,
+        "PublishOrderIndex": 667,
         "Rules": [
           {
             "Category": "Design",
@@ -1878,7 +1878,7 @@
         "NameMapSourceSchema": "?"
       }
     ],
-    "LastModifiedTimestamp": "638007951493618162",
+    "LastModifiedTimestamp": "638008104957694909",
     "Name": "header",
     "Rules": [
       {
@@ -1953,7 +1953,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638007951493618162",
+  "LastModifiedTimestamp": "638008104957694909",
   "Name": "f4e38777fc144c50bf683877d8161430",
   "OverridableProperties": {},
   "TemplateOriginalName": "6be177610a0f4a7d9f66890d0f402d8a",
