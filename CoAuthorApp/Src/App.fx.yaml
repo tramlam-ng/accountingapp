@@ -6,7 +6,7 @@ App As appinfo:
         ClearCollect(colRevStatus,{Value:Blank()});
         Collect(colRevStatus,Choices(Revenues.'Revenue Status'));
         ClearCollect(colProjStatus,{Value:Blank()});
-        Collect(colProjStatus,Choices(Projects.'Project Status'));
+        Collect(colProjStatus,Choices('PROJECT_STAGE (Projects)'));
         ClearCollect(colExpenseStatus,{Value:Blank()});
         Collect(colExpenseStatus,Choices(Expenses.'Expense Status'))
         

@@ -74,7 +74,7 @@
         "Name": "Icon1",
         "Parent": "header1",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 732,
+        "PublishOrderIndex": 671,
         "Rules": [
           {
             "Category": "Design",
@@ -267,7 +267,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638005253357197270",
+    "LastModifiedTimestamp": "638007951493611608",
     "Name": "header1",
     "Rules": [
       {
@@ -326,7 +326,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638005253357197270",
+  "LastModifiedTimestamp": "638007951493611608",
   "Name": "a507d19fd4f546a7b988100c45324540",
   "OverridableProperties": {},
   "Version": "637998924781946988"

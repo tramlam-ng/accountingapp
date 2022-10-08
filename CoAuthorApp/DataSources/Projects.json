@@ -35,6 +35,7 @@
       "tl_Person": "Person",
       "tl_plstatus": "P&L Status",
       "tl_project": "Project",
+      "tl_project_stage": "PROJECT_STAGE",
       "tl_projects_ActivityPointers": "Activities",
       "tl_projects_adx_alertsubscriptions": "Alert Subscriptions",
       "tl_projects_adx_inviteredemptions": "Invite Redemptions",
@@ -149,6 +150,29 @@
     },
     "OptionSetTypeKey": "PicklistType",
     "RelatedColumnInvariantName": "tl_plstatus",
+    "RelatedEntityName": "Projects",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "PROJECT_STAGE (Projects)",
+    "Name": "tl_projects_tl_project_stage",
+    "OptionSetInfoNameMapping": {
+      "126800000": "1. NEW",
+      "126800001": "2. CONTRACT",
+      "126800002": "3. EXECUTION",
+      "126800004": "4. PAYMENT",
+      "126800005": "5. DONE"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "tl_project_stage",
+        "OptionSetReferenceEntityName": "Projects"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "tl_project_stage",
     "RelatedEntityName": "Projects",
     "Type": "OptionSetInfo"
   },
