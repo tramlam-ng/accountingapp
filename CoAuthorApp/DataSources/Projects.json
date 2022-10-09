@@ -31,6 +31,7 @@
       "tl_contractimage": "Contract Image",
       "tl_contractimageid": "tl_ContractImageId",
       "tl_dealvalue": "Deal Value",
+      "tl_id": "ID",
       "tl_idnum": "IDNum",
       "tl_Person": "Person",
       "tl_plstatus": "P&L Status",
