@@ -21,6 +21,7 @@
       "createddatetime": "Created Date Time",
       "displayname": "Display Name",
       "givenname": "Given Name",
+      "htd_htd_deal_ASSIGNEE_aaduser": "DEALS",
       "id": "A unique identifer for AAD User",
       "imaddresses": "ImAddresses",
       "jobtitle": "Job Title",
